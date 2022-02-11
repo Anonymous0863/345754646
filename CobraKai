@@ -1,0 +1,739 @@
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Aurelius0863/Main/main/GreenUILib.lua"))()
+
+local main = Lib:CreateWindow("Tea Hub", "RO-BOXING")
+local tab = main:CreateTab("Misc")
+
+local section = tab:CreateSection("Misc")
+
+
+local Player = game:GetService("Players").LocalPlayer.Character.Humanoid
+
+local walk = section:CreateSlider("WalkSpeed", 16,250, function(arg)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = arg 
+end)
+local jumpPow = section:CreateSlider("JumpPower", 50,250, function(set)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = set 
+end)
+local infJump = section:CreateToggle("Infinite Jump", function(arg)
+    _G.jump = arg
+    local UIS = game:GetService("UserInputService")
+    UIS.JumpRequest:Connect(function()
+        if _G.jump then
+            game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+        end
+    end)
+end)
+
+
+local tp = section:CreateTP()
+local button = section:CreateButton("Fly (X)",function()
+
+local player = game.Players.LocalPlayer
+local chars = player.Character or player.CharacterAdded:Wait()
+
+local cam = workspace.CurrentCamera
+local uis = game:GetService("UserInputService")
+
+local wPressed = false
+local sPressed = false
+local aPressed = false
+local dPressed = false
+
+local flying = false
+uis.InputBegan:Connect(function(key, chat)
+	if chat then return end
+	if key.KeyCode == Enum.KeyCode.X then
+		if flying then --Stop Flying
+			flying = false
+			chars.Animate.Disabled = false
+	
+			
+		else --Start Flying
+			flying = true
+			
+			chars.Animate.Disabled = true
+		
+			
+			local bv = Instance.new("BodyVelocity", chars.PrimaryPart)
+			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+			bv.Velocity = Vector3.new(0,0,0)
+			bv.Name = "FlightForce"
+			
+			repeat wait(0.1) until flying == false
+			bv:Destroy()
+		end
+	end
+	
+	if key.KeyCode == Enum.KeyCode.W then
+		wPressed = true
+	elseif key.KeyCode == Enum.KeyCode.S then
+		sPressed = true
+	elseif key.KeyCode == Enum.KeyCode.A then
+		aPressed = true
+	elseif key.KeyCode == Enum.KeyCode.D then
+		dPressed = true
+	end
+end)
+
+uis.InputEnded:Connect(function(key)	
+	if key.KeyCode == Enum.KeyCode.W then
+		wPressed = false
+	elseif key.KeyCode == Enum.KeyCode.S then
+		sPressed = false
+	elseif key.KeyCode == Enum.KeyCode.A then
+		aPressed = false
+	elseif key.KeyCode == Enum.KeyCode.D then
+		dPressed = false
+	end
+end)
+
+while wait() do
+	if flying then
+		chars.PrimaryPart:FindFirstChild("FlightForce").Velocity = Vector3.new(0,0,0)
+
+		if wPressed then
+			chars.PrimaryPart:FindFirstChild("FlightForce").Velocity = cam.CFrame.LookVector * 100
+
+		end
+		if sPressed then
+			chars.PrimaryPart:FindFirstChild("FlightForce").Velocity = cam.CFrame.LookVector * -100
+	
+		end
+		if aPressed then
+			chars.PrimaryPart:FindFirstChild("FlightForce").Velocity = cam.CFrame.RightVector * -100
+
+		end
+		if dPressed then
+			chars.PrimaryPart:FindFirstChild("FlightForce").Velocity = cam.CFrame.RightVector * 100
+		
+		end
+	else
+		wait(1)
+	end
+end
+end)
+local rejoin = section:CreateButton("Rejoin Server", function()
+    local TS =game:GetService("TeleportService")
+    TS:Teleport(game.PlaceId,game.Players.LocalPlayer)
+end)
+
+
+
+local Farming = main:CreateTab("Farming")
+
+local Sec = Farming:CreateSection("Farming")
+
+local stregnthStarted = false
+
+local speedStarted = false
+
+local accuracyStarted = false
+
+
+local stregnthTextBox = Sec:CreateTB("Auto-Stregnth","Value", function(arg)
+    if speedStarted == false and accuracyStarted == false then
+        stregnthStarted = true
+    else
+        repeat
+            task.wait()
+        until speedStarted == false and accuracyStarted == false
+        stregnthStarted = true
+    end
+    local num = tonumber(arg)
+
+    if stregnthStarted and num ~= "" and num ~= " " then
+        for i = 0,num do
+            task.wait()
+            local weights = {game.Workspace.Overhead1,game.Workspace.Bicep1,game.Workspace.Squat1, game.Workspace.Bench1}
+
+            local using = 0
+            
+            if weights[1]["In_Use"].Value == false then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = weights[1]["Torso_Position"].CFrame
+                task.wait(0.75)
+                game.ReplicatedStorage.Strength_Exercises.Overhead1:FireServer()
+                using = 1
+            elseif weights[2]["In_Use"].Value == false then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = weights[2]["Torso_Position"].CFrame
+                task.wait(0.75)
+                game.ReplicatedStorage.Strength_Exercises.Bicep1:FireServer()
+                using = 2
+            elseif weights[3]["In_Use"].Value == false then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = weights[3]["Torso_Position"].CFrame
+                task.wait(0.75)
+                game.ReplicatedStorage.Strength_Exercises.Squat1:FireServer()
+                using = 3
+            elseif weights[4]["In_Use"] == false then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = weights[4]["Torso_Position"].CFrame
+                task.wait(0.75)
+                game.ReplicatedStorage.Strength_Exercises.Bench1:FireServer()
+                using = 4
+            end
+            
+            if using == 1 then
+            repeat
+                task.wait(0.1)
+            until weights[1]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 2 then
+            repeat
+                task.wait(0.1)
+            until weights[2]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 3 then
+                repeat
+                    task. wait(0.1)
+                until weights[3]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 4 then
+                repeat
+                    task.wait(0.1)
+                until weights[1]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+            using = 0
+        end
+        stregnthStarted = false
+    end
+end)
+
+local speedTextBox = Sec:CreateTB("Auto-Speed","Value", function(arg)
+    if stregnthStarted == false and accuracyStarted == false then
+        speedStarted = true
+    else
+        repeat
+            task.wait()
+        until stregnthStarted == false and accuracyStarted == false
+        speedStarted = true
+    end
+    local num = tonumber(arg)
+    local newNumber = num * 2
+    _G.speed = bool
+    local number = 10 * 2
+    if speedStarted and num ~= "" and num ~= " " then
+        for i = 0,num do
+        task.wait()
+        local punchbag1 = game.Workspace.Punch_Bag1
+            local punchbag2 = game.Workspace.Punch_Bag2
+            local speedbag1 = game.Workspace.Speed_Bag1
+            local speedbag2 = game.Workspace.Speed_Bag2
+            
+            local using = 0
+            
+            if punchbag1.In_Use.Value == false then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = punchbag1.Torso_Position.CFrame
+                task.wait(0.75)
+                game.ReplicatedStorage.Strength_Exercises["Punch_Bag1"]:FireServer()
+                using = 1
+            elseif punchbag2.In_Use.Value == false then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = punchbag2.Torso_Position.CFrame
+                task.wait(0.75)
+                game.ReplicatedStorage.Strength_Exercises["Punch_Bag2"]:FireServer()
+                using = 2
+            elseif speedbag1.In_Use.Value == false then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = speedbag1.Torso_Position.CFrame
+                task.wait(0.75)
+                game.ReplicatedStorage.Strength_Exercises["Speed_Bag1"]:FireServer()
+                using = 3
+            elseif speedbag2.In_Use.Value == false then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = speedbag2.Torso_Position.CFrame
+                task.wait(0.75)
+                game.ReplicatedStorage.Strength_Exercises["Speed_Bag1"]:FireServer()
+                using = 4
+            end
+            
+            if using == 1 then
+                repeat
+                    task.wait(0.1)
+                until punchbag1.Player.Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 2 then
+                repeat
+                    task.wait(0.1)
+                until punchbag2.Player.Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 3 then
+                repeat
+                    task.wait(0.1)
+                until speedbag1.Player.Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 4 then
+                repeat
+                    task.wait(0.1)
+                until speedbag2.Player.Value ~= game.Players.LocalPlayer.Name
+            end   
+        end
+        speedStarted = false
+    end
+end)
+
+local accuracyTextBox = Sec:CreateTB("AutoAccuracy","Value", function(arg)
+    if stregnthStarted == false and speedStarted == false then
+        accuracyStarted = true
+    else
+        repeat
+            task.wait()
+        until stregnthStarted == false and speedStarted == false
+        accuracyStarted = true
+    end
+    local number = tonumber(arg)
+    local newNumber = number * 2
+    _G.speed = bool
+    if accuracyStarted and num ~= "" and num ~= " " then
+        for i = 0,number do
+            task.wait()
+            local num = 1
+            for i = 1,4 do
+            local dummy = game.Workspace["Dummy_Punch" .. i]
+            local using = dummy.In_Use.Value
+            
+            if using == false then
+            num = i
+            end
+            end
+            
+            local dummy = game.Workspace["Dummy_Punch" .. num]
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = dummy.BlockedArea1.CFrame
+            wait(0.75)
+            game.ReplicatedStorage.Strength_Exercises["Dummy_Punch" .. num]:FireServer()
+            wait(0.75)
+            repeat
+            wait()
+            local player = dummy.Player.Value
+            local buttons = dummy.Buttons:getChildren()
+            for i=1,#buttons do
+            if buttons[i].Color == Color3.fromRGB(0,255,0) then
+            fireclickdetector(buttons[i].ClickDetector)
+            end
+            end
+            until player ~= game.Players.LocalPlayer.Name
+            repeat
+            wait(0.1)
+            until dummy.Player.Value ~= game.Players.LocalPlayer.Name
+        end
+        accuracyStarted = false
+    end
+end)
+
+local farmtog = Sec:CreateToggle("Auto-Fitness", function(bool)
+    _G.farm = bool
+    while _G.farm do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-147.320755,4.566317,-17.81282261)
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState("Running")
+       wait() 
+    end
+end)
+
+local ropetog = Sec:CreateToggle("Auto-ClimbRope", function(arg)
+    local TS = game:GetService("TweenService")
+    local character = game.Players.LocalPlayer.Character
+    local rootpart = character.HumanoidRootPart
+    local hum = character.Humanoid
+    _G.rope = arg
+    
+    local tween = TS:Create(rootpart,TweenInfo.new(5), {CFrame = CFrame.new(-114.388481, 4.48861361, -5.66979265, -0.188930377, 8.20050872e-08, -0.981990457, 6.76743568e-08, 1, 7.04888166e-08, 0.981990457, -5.31380948e-08, -0.188930377)})
+    
+    local secondtween =  TS:Create(rootpart,TweenInfo.new(1.5), {CFrame = CFrame.new(-114.388481, 4.48861361, -5.66979265, -0.188930377, 8.20050872e-08, -0.981990457, 6.76743568e-08, 1, 7.04888166e-08, 0.981990457, -5.31380948e-08, -0.188930377)})
+    tween:Play()
+    
+    character.Humanoid:ChangeState(Enum.HumanoidStateType.Climbing)
+    
+    while _G.rope do
+        wait(1.5)
+        local tween2 = TS:Create(rootpart,TweenInfo.new(1.5), {CFrame = CFrame.new(-114.304405, 14.6031408, -5.71851683, -0.188599378, -5.87021241e-08, -0.982054114, -5.58962654e-08, 1, -4.90401924e-08, 0.982054114, 4.56442066e-08, -0.188599378)})
+        tween2:Play()
+        wait(1.5)
+        secondtween:Play() 
+    end
+end)
+
+local stregnthtog = Sec:CreateToggle("Auto-Stregnth", function(toggle)
+    _G.Stregnth = toggle
+    while _G.Stregnth do
+       wait()
+        local weights = {game.Workspace.Overhead1,game.Workspace.Bicep1,game.Workspace.Squat1, game.Workspace.Bench1}
+
+        local using = 0
+        
+        if weights[1]["In_Use"].Value == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = weights[1]["Torso_Position"].CFrame
+        wait(0.75)
+        game.ReplicatedStorage.Strength_Exercises.Overhead1:FireServer()
+        using = 1
+        elseif weights[2]["In_Use"].Value == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = weights[2]["Torso_Position"].CFrame
+        wait(0.75)
+        game.ReplicatedStorage.Strength_Exercises.Bicep1:FireServer()
+        using = 2
+        elseif weights[3]["In_Use"].Value == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = weights[3]["Torso_Position"].CFrame
+        wait(0.75)
+        game.ReplicatedStorage.Strength_Exercises.Squat1:FireServer()
+        using = 3
+        elseif weights[4]["In_Use"] == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = weights[4]["Torso_Position"].CFrame
+        wait(0.75)
+        game.ReplicatedStorage.Strength_Exercises.Bench1:FireServer()
+        using = 4
+        end
+        
+        if using == 1 then
+        repeat
+        wait(0.1)
+        until weights[1]["Player"].Value ~= game.Players.LocalPlayer.Name
+        end
+        if using == 2 then
+        repeat
+        wait(0.1)
+        until weights[2]["Player"].Value ~= game.Players.LocalPlayer.Name
+        end
+        if using == 3 then
+        repeat
+        wait(0.1)
+        until weights[3]["Player"].Value ~= game.Players.LocalPlayer.Name
+        end
+        if using == 4 then
+        repeat
+        wait(0.1)
+        until weights[1]["Player"].Value ~= game.Players.LocalPlayer.Name
+        end
+        
+        using = 0
+    end
+end)
+
+local tramp = Sec:CreateToggle("Auto-Tramp", function(bool)
+    local tramps = {game.Workspace.Tramp1, game.Workspace.Tramp2, game.Workspace.Tramp3, game.Workspace.Tramp4}
+    _G.Trampoline = bool
+    while _G.Trampoline do
+        wait()
+        local using = 0
+
+        if tramps[4]["In_Use"].Value == false then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tramps[4]["Torso_Position"].CFrame
+            wait(0.75)
+            game:GetService("ReplicatedStorage")["Strength_Exercises"].Tramp4:FireServer()
+            using = 4
+        elseif tramps[3]["In_Use"].Value == false then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tramps[3]["Torso_Position"].CFrame
+            wait(0.75)
+            game:GetService("ReplicatedStorage")["Strength_Exercises"].Tramp3:FireServer()
+            using = 3
+        elseif tramps[2]["In_Use"].Value == false then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tramps[2]["Torso_Position"].CFrame
+            wait(0.75)
+            game:GetService("ReplicatedStorage")["Strength_Exercises"].Tramp2:FireServer()
+            using = 2
+        elseif tramps[1]["In_Use"].Value == false then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tramps[1]["Torso_Position"].CFrame
+            wait(0.75)
+            game:GetService("ReplicatedStorage")["Strength_Exercises"].Tramp1:FireServer()
+            using = 1
+        end
+
+            if using == 1 then
+            repeat
+            wait(0.1)
+            until tramps[1]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 2 then
+            repeat
+            wait(0.1)
+            until tramps[2]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 3 then
+            repeat
+            wait(0.1)
+            until tramps[3]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 4 then
+            repeat
+            wait(0.1)
+            until tramps[4]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+
+            using = 0
+    end
+end)
+
+local Yoga = Sec:CreateToggle("Auto-Yoga", function(bool)
+    local Mats = {game.Workspace.Leg_Lift, game.Workspace.Squat_Jumps, game.Workspace.Push_Ups, game.Workspace.Crunches}
+    _G.Yoga = bool
+    while _G.Yoga do
+        wait()
+        local using = 0
+
+        if Mats[4]["In_Use"].Value == false then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Mats[4]["Torso_Position"].CFrame
+            wait(0.75)
+            game:GetService("ReplicatedStorage").Strength_Exercises.Crunches:FireServer()
+            using = 4
+        elseif Mats[3]["In_Use"].Value == false then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Mats[3]["Torso_Position"].CFrame
+            wait(0.75)
+            game:GetService("ReplicatedStorage").Strength_Exercises.Push_Ups:FireServer()
+            using = 3
+        elseif Mats[2]["In_Use"].Value == false then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Mats[2]["Torso_Position"].CFrame
+            wait(0.75)
+            game:GetService("ReplicatedStorage")["Strength_Exercises"].Squat_Jumps:FireServer()
+            using = 2
+        elseif Mats[1]["In_Use"].Value == false then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Mats[1]["Torso_Position"].CFrame
+            wait(0.75)
+            game:GetService("ReplicatedStorage").Strength_Exercises.Leg_Lifts:FireServer()
+            using = 1
+        end
+
+            if using == 1 then
+            repeat
+            wait(0.1)
+            until Mats[1]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 2 then
+            repeat
+            wait(0.1)
+            until Mats[2]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 3 then
+            repeat
+            wait(0.1)
+            until Mats[3]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+            if using == 4 then
+            repeat
+            wait(0.1)
+            until Mats[4]["Player"].Value ~= game.Players.LocalPlayer.Name
+            end
+
+            using = 0
+    end
+end)
+
+local accuracy = Sec:CreateToggle("Auto-Accuracy", function(boolean)
+    _G.acc = boolean
+    while _G.acc do
+        wait()
+        local num = 1
+        for i = 1,4 do
+        local dummy = game.Workspace["Dummy_Punch" .. i]
+        local using = dummy.In_Use.Value
+        
+        if using == false then
+        num = i
+        end
+        end
+        
+        local dummy = game.Workspace["Dummy_Punch" .. num]
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = dummy.BlockedArea1.CFrame
+        wait(0.75)
+        game.ReplicatedStorage.Strength_Exercises["Dummy_Punch" .. num]:FireServer()
+        wait(0.75)
+        repeat
+        wait()
+        local player = dummy.Player.Value
+        local buttons = dummy.Buttons:getChildren()
+        for i=1,#buttons do
+        if buttons[i].Color == Color3.fromRGB(0,255,0) then
+        fireclickdetector(buttons[i].ClickDetector)
+        end
+        end
+        until player ~= game.Players.LocalPlayer.Name
+        repeat
+        wait(0.1)
+        until dummy.Player.Value ~= game.Players.LocalPlayer.Name
+    end
+end)
+
+local speed = Sec:CreateToggle("Auto-Speed", function(bool)
+    _G.speed = bool
+    while _G.speed do
+       wait()
+       local punchbag1 = game.Workspace.Punch_Bag1
+        local punchbag2 = game.Workspace.Punch_Bag2
+        local speedbag1 = game.Workspace.Speed_Bag1
+        local speedbag2 = game.Workspace.Speed_Bag2
+        
+        local using = 0
+        
+        if punchbag1.In_Use.Value == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = punchbag1.Torso_Position.CFrame
+        wait(0.75)
+        game.ReplicatedStorage.Strength_Exercises["Punch_Bag1"]:FireServer()
+        using = 1
+        elseif punchbag2.In_Use.Value == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = punchbag2.Torso_Position.CFrame
+        wait(0.75)
+        game.ReplicatedStorage.Strength_Exercises["Punch_Bag2"]:FireServer()
+        using = 2
+        elseif speedbag1.In_Use.Value == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = speedbag1.Torso_Position.CFrame
+        wait(0.75)
+        game.ReplicatedStorage.Strength_Exercises["Speed_Bag1"]:FireServer()
+        using = 3
+        elseif speedbag2.In_Use.Value == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = speedbag2.Torso_Position.CFrame
+        wait(0.75)
+        game.ReplicatedStorage.Strength_Exercises["Speed_Bag1"]:FireServer()
+        using = 4
+        end
+        
+        if using == 1 then
+        repeat
+        wait(0.1)
+        until punchbag1.Player.Value ~= game.Players.LocalPlayer.Name
+        end
+        if using == 2 then
+        repeat
+        wait(0.1)
+        until punchbag2.Player.Value ~= game.Players.LocalPlayer.Name
+        end
+        if using == 3 then
+        repeat
+        wait(0.1)
+        until speedbag1.Player.Value ~= game.Players.LocalPlayer.Name
+        end
+        if using == 4 then
+        repeat
+        wait(0.1)
+        until speedbag2.Player.Value ~= game.Players.LocalPlayer.Name
+        end
+        
+        using = 0
+    end
+end)
+local swim = Sec:CreateToggle("Auto-Swim", function(arg)
+    local TS = game:GetService("TweenService")
+    local character = game.Players.LocalPlayer.Character
+    local rootpart = character.HumanoidRootPart
+    local hum = character.Humanoid
+    _G.swim = arg
+    local tween = TS:Create(rootpart,TweenInfo.new(5), {CFrame = CFrame.new(-137.324677, -1.3047272, -101.999374, -0.1099957, -0.000934670621, 0.993931651, -0.00145137962, 0.999998629, 0.000779755705, -0.993930995, -0.0013568023, -0.109996907) * CFrame.Angles(math.rad(90),0,0)})
+
+    local secondtween =  TS:Create(rootpart,TweenInfo.new(3), {CFrame = CFrame.new(-137.324677, -1.3047272, -101.999374, -0.1099957, -0.000934670621, 0.993931651, -0.00145137962, 0.999998629, 0.000779755705, -0.993930995, -0.0013568023, -0.109996907) * CFrame.Angles(math.rad(90),0,0)})
+    tween:Play()
+
+    character.Humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
+
+    while _G.swim do
+        character.Humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
+        task.wait(3)
+        local tween2 = TS:Create(rootpart,TweenInfo.new(3), {CFrame = CFrame.new(-182.00238, -1.30539942, -103.414207, 0.145629406, 0.00188694173, 0.989337385, 0.00030216077, 0.999998033, -0.00195175223, -0.989339173, 0.000583171437, 0.145628542) * CFrame.Angles(math.rad(90),0,0)})
+        tween2:Play()
+        task.wait(3)
+        secondtween:Play() 
+    end
+end)
+local Teleports = main:CreateTab("Teleport")
+
+local telSec = Teleports:CreateSection("Teleports")
+
+local TS = game:GetService("TweenService")
+
+local btn = telSec:CreateButton("2v2 Area", function()
+    TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(5),{CFrame = CFrame.new(-192, -20, 152)}):Play()
+end)
+
+local btn2 = telSec:CreateButton("Sparring Area", function()
+    TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(5),{CFrame = CFrame.new(-172, -20, -32)}):Play()
+end)
+
+local btn3 = telSec:CreateButton("Tournament Area", function()
+    TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(5),{CFrame = CFrame.new(-17, -20, 39)}):Play()
+end)
+
+local btn4 = telSec:CreateButton("Shop Area", function()
+    TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(5),{CFrame = CFrame.new(-91, 3, 1)}):Play()
+end)
+
+local btn5 = telSec:CreateButton("Training Area", function()
+    TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(5),{CFrame = CFrame.new(-117, 3, 39)}):Play()
+end)
+
+local btn6 = telSec:CreateButton("Swim Pool/Locker-Room", function()
+    TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(5),{CFrame = CFrame.new(-90, 3, -129)}):Play()
+end)
+
+
+local settings = main:CreateTab("Settings")
+
+local newSection = settings:CreateSection("Settings")
+
+local vanillaShake = newSection:CreateButton("Buy Vanilla Shake", function()
+    local args = {
+        [1] = "Vanilla",
+        [2] = 1
+    }
+
+    game:GetService("ReplicatedStorage").Buy_Drink:InvokeServer(unpack(args))
+end)
+
+local vanillaQuantity = newSection:CreateTB("Vanilla Qty.", "Value",function(arg)
+    if num ~= "" and num ~= " " then
+        local args = {
+            [1] = "Vanilla",
+            [2] = tonumber(arg)
+        }
+
+        game:GetService("ReplicatedStorage").Buy_Drink:InvokeServer(unpack(args))
+    end
+end)
+
+local choclateShake = newSection:CreateButton("Buy Chocolate Shake", function()
+    local args = {
+        [1] = "Chocolate",
+        [2] = 1
+    }
+
+    game:GetService("ReplicatedStorage").Buy_Drink:InvokeServer(unpack(args))
+end)
+
+local choclateQuantity = newSection:CreateTB("Chocolate Qty.","Value", function(arg)
+    if num ~= "" and num ~= " " then
+        local args = {
+            [1] = "Chocolate",
+            [2] = tonumber(arg)
+        }
+
+        game:GetService("ReplicatedStorage").Buy_Drink:InvokeServer(unpack(args))
+    end
+end)
+
+local drop = newSection:CreateDropDown("Drink Shakes")
+
+local dropBtn = newSection:CreateDropDownBtn("Vanilla Shake", function()
+    local args = {
+        [1] = "Vanilla"
+    }
+
+    game:GetService("ReplicatedStorage").Drink_Shake:InvokeServer(unpack(args))
+end)
+
+local dropBtn2 = newSection:CreateDropDownBtn("Chocolate Shake", function()
+    local args = {
+        [1] = "Chocolate"
+    }
+
+    game:GetService("ReplicatedStorage").Drink_Shake:InvokeServer(unpack(args))
+end)
+local credits = newSection:CreateButton("Copy Discord Invite", function()
+    setclipboard("https://discord.gg/jvAQhN7hxX")
+    game.StarterGui:SetCore("SendNotification",{
+        Title = "Discord Invite",
+        Text = "Successfully Copied!",
+        Duration = 4
+    })
+end)
+
+local destroy = newSection:CreateButton("Destroy UI", function()
+    game.CoreGui:FindFirstChild("UI"):Destroy()
+end)
+
+local toggleUI = newSection:CreateKeyBind("Toggle Menu")
+
+local bb = game:GetService("VirtualUser")
+
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+	bb:CaptureController()
+	bb:ClickButton2(Vector2.new())
+	print("Don't kick me roblox")
+end)
