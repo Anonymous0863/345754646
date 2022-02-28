@@ -14,6 +14,7 @@ game.StarterGui:SetCore("SendNotification", {
 local ScreenGui = {
 	ScreenGui = Instance.new("ScreenGui"),
 	Main = Instance.new("Frame"),
+    TeaHubImage = Instance.new("ImageLabel"),
 	BottomFrame = Instance.new("Frame"),
 	ColorFrame = Instance.new("Frame"),
 	BFrameText = Instance.new("TextLabel"),
@@ -261,7 +262,7 @@ local ScreenGui = {
 	UICorner_74 = Instance.new("UICorner"),
 	ScrollFrame = Instance.new("Frame"),
 	UICorner_75 = Instance.new("UICorner"),
-	Text_3 = Instance.new("TextLabel"),
+	ScrollText = Instance.new("TextLabel"),
 	ScrollTP = Instance.new("TextButton"),
 	UICorner_76 = Instance.new("UICorner"),
 	HitboxTransparency = Instance.new("Frame"),
@@ -340,6 +341,75 @@ local ScreenGui = {
 	Roundify = Instance.new("UICorner"),
 	ShopBtn = Instance.new("TextButton"),
 	Roundify2 = Instance.new("UICorner"),
+    QuitLotus = Instance.new("TextButton"),
+    QuitLotusRound = Instance.new("UICorner"),
+    CombatBtn = Instance.new("TextButton"),
+    CombatCorner = Instance.new("UICorner"),
+    CombatF = Instance.new("Frame"),
+    CombatText = Instance.new("TextLabel"),
+    Combat2Line = Instance.new("Frame"),
+    AimbotF = Instance.new("Frame"),
+    AimbotDivide = Instance.new("Frame"),
+    AimbotText = Instance.new("TextLabel"),
+    AimFrame = Instance.new("ImageLabel"),
+    AimCircle = Instance.new("ImageLabel"),
+    AimBtn = Instance.new("TextButton"),
+    AimOff = Instance.new("TextLabel"),
+    AimOn = Instance.new("TextLabel"),
+    DropDown = Instance.new("Frame"),
+    DropDownRound = Instance.new("UICorner"),
+    Text = Instance.new("TextLabel"),
+    Frame = Instance.new("Frame"),
+    Purple = Instance.new("TextButton"),
+    H_PurpleRound = Instance.new("UICorner"),
+    White = Instance.new("TextButton"),
+    H_WhiteRound = Instance.new("UICorner"),
+    Green = Instance.new("TextButton"),
+    H_GreenRound = Instance.new("UICorner"),
+    Red = Instance.new("TextButton"),
+    H_RedRound = Instance.new("UICorner"),
+    Blue = Instance.new("TextButton"),
+    H_BlueRound = Instance.new("UICorner"),
+    DropBtn = Instance.new("ImageButton"),
+    DropRound = Instance.new("UICorner"),
+    HitBoxSize = Instance.new("Frame"),
+    SizeCorner = Instance.new("UICorner"),
+    Text_2 = Instance.new("TextLabel"),
+    SliderBtn = Instance.new("TextButton"),
+    SliderBtn_Roundify_12px = Instance.new("ImageLabel"),
+    SliderInner = Instance.new("Frame"),
+    SliderInnerCorner = Instance.new("UICorner"),
+    SliderCurrent = Instance.new("TextLabel"),
+    HitboxTransparency = Instance.new("Frame"),
+    TransparencyRound = Instance.new("UICorner"),
+    Text_3 = Instance.new("TextLabel"),
+    TextBox = Instance.new("TextBox"),
+    TextBoxCorner = Instance.new("UICorner"),
+    LineEspF = Instance.new("Frame"),
+    LineDivide = Instance.new("Frame"),
+    LineFrame = Instance.new("ImageLabel"),
+    LineCircle = Instance.new("ImageLabel"),
+    LineESPBtn = Instance.new("TextButton"),
+    LineOff = Instance.new("TextLabel"),
+    LineOn = Instance.new("TextLabel"),
+    LineText = Instance.new("TextLabel"),
+    BoxF = Instance.new("Frame"),
+    BoxDivide = Instance.new("Frame"),
+    BoxText = Instance.new("TextLabel"),
+    BoxFrame = Instance.new("ImageLabel"),
+    BoxCircle = Instance.new("ImageLabel"),
+    BoxBtn = Instance.new("TextButton"),
+    BoxOff = Instance.new("TextLabel"),
+    BoxOn = Instance.new("TextLabel"),
+    HealthF = Instance.new("Frame"),
+    HealthDivide = Instance.new("Frame"),
+    HealthText = Instance.new("TextLabel"),
+    HealthFrame = Instance.new("ImageLabel"),
+    HealthCircle = Instance.new("ImageLabel"),
+    HealthBtn = Instance.new("TextButton"),
+    HealthOff = Instance.new("TextLabel"),
+    HealthOn = Instance.new("TextLabel"),
+    CombatLine = Instance.new("Frame"),
 	ElementFrame = Instance.new("Frame"),
 	ElementChangeLine = Instance.new("Frame"),
 	ElementChangeText = Instance.new("TextLabel"),
@@ -607,6 +677,16 @@ ScreenGui.Main.BorderSizePixel = 0
 ScreenGui.Main.ClipsDescendants = true
 ScreenGui.Main.Position = UDim2.new(0.163393646, 0, 0.243876517, 0)
 ScreenGui.Main.Size = UDim2.new(0, 536, 0, 372)
+
+ScreenGui.TeaHubImage.Name = "TeaHubImage"
+ScreenGui.TeaHubImage.Parent = ScreenGui.Main
+ScreenGui.TeaHubImage.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ScreenGui.TeaHubImage.Position = UDim2.new(0.25, 0, 0.00806451589, 0)
+ScreenGui.TeaHubImage.Size = UDim2.new(0, 402, 0, 315)
+ScreenGui.TeaHubImage.ZIndex = 0
+ScreenGui.TeaHubImage.Image = "rbxassetid://8971182327"
+ScreenGui.TeaHubImage.ImageColor3 = Color3.fromRGB(43, 43, 43)
+ScreenGui.TeaHubImage.ImageTransparency = 0.700
 
 ScreenGui.BottomFrame.Name = "BottomFrame"
 ScreenGui.BottomFrame.Parent = ScreenGui.Main
@@ -2228,217 +2308,34 @@ ScreenGui.MaxStats.TextWrapped = true
 
 ScreenGui.UICorner_65.Parent = ScreenGui.MaxStats
 
-ScreenGui.HitBoxSize.Name = "HitBoxSize"
-ScreenGui.HitBoxSize.Parent = ScreenGui.OthersF
-ScreenGui.HitBoxSize.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-ScreenGui.HitBoxSize.Position = UDim2.new(0.0970149264, 0, 0.841975272, 0)
-ScreenGui.HitBoxSize.Size = UDim2.new(0, 307, 0, 38)
-
-ScreenGui.UICorner_66.Parent = ScreenGui.HitBoxSize
-
-ScreenGui.Text.Name = "Text"
-ScreenGui.Text.Parent = ScreenGui.HitBoxSize
-ScreenGui.Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScreenGui.Text.BackgroundTransparency = 1.000
-ScreenGui.Text.Position = UDim2.new(0.223036975, 0, -0.0335837901, 0)
-ScreenGui.Text.Size = UDim2.new(0, 147, 0, 21)
-ScreenGui.Text.Font = Enum.Font.Merriweather
-ScreenGui.Text.Text = "Hit-Box Size"
-ScreenGui.Text.TextColor3 = Color3.fromRGB(192, 192, 192)
-ScreenGui.Text.TextSize = 19.000
-ScreenGui.Text.TextWrapped = true
-
-ScreenGui.SliderBtn.Name = "SliderBtn"
-ScreenGui.SliderBtn.Parent = ScreenGui.HitBoxSize
-ScreenGui.SliderBtn.BackgroundColor3 = Color3.fromRGB(16, 98, 162)
-ScreenGui.SliderBtn.BackgroundTransparency = 1.000
-ScreenGui.SliderBtn.BorderSizePixel = 0
-ScreenGui.SliderBtn.Position = UDim2.new(0.0555555113, 0, 0.521428406, 0)
-ScreenGui.SliderBtn.Size = UDim2.new(0, 253, 0, 13)
-ScreenGui.SliderBtn.Font = Enum.Font.SourceSans
-ScreenGui.SliderBtn.Text = ""
-ScreenGui.SliderBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-ScreenGui.SliderBtn.TextSize = 14.000
-
-ScreenGui.SliderBtn_Roundify_12px.Name = "SliderBtn_Roundify_12px"
-ScreenGui.SliderBtn_Roundify_12px.Parent = ScreenGui.SliderBtn
-ScreenGui.SliderBtn_Roundify_12px.Active = true
-ScreenGui.SliderBtn_Roundify_12px.AnchorPoint = Vector2.new(0.5, 0.5)
-ScreenGui.SliderBtn_Roundify_12px.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
-ScreenGui.SliderBtn_Roundify_12px.BackgroundTransparency = 1.000
-ScreenGui.SliderBtn_Roundify_12px.BorderColor3 = Color3.fromRGB(27, 42, 53)
-ScreenGui.SliderBtn_Roundify_12px.Position = UDim2.new(0.573000014, 0, 0.600000024, 0)
-ScreenGui.SliderBtn_Roundify_12px.Selectable = true
-ScreenGui.SliderBtn_Roundify_12px.Size = UDim2.new(0.966995001, 0, 1, 0)
-ScreenGui.SliderBtn_Roundify_12px.Image = "rbxassetid://3570695787"
-ScreenGui.SliderBtn_Roundify_12px.ImageColor3 = Color3.fromRGB(139, 139, 139)
-ScreenGui.SliderBtn_Roundify_12px.ScaleType = Enum.ScaleType.Slice
-ScreenGui.SliderBtn_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
-ScreenGui.SliderBtn_Roundify_12px.SliceScale = 0.120
-
-ScreenGui.SliderInner.Name = "SliderInner"
-ScreenGui.SliderInner.Parent = ScreenGui.SliderBtn_Roundify_12px
-ScreenGui.SliderInner.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
-ScreenGui.SliderInner.BorderColor3 = Color3.fromRGB(185, 185, 185)
-ScreenGui.SliderInner.Size = UDim2.new(0, 8, 0, 13)
-
-ScreenGui.UICorner_67.Parent = ScreenGui.SliderInner
-
-ScreenGui.SliderCurrent.Name = "SliderCurrent"
-ScreenGui.SliderCurrent.Parent = ScreenGui.HitBoxSize
-ScreenGui.SliderCurrent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScreenGui.SliderCurrent.BackgroundTransparency = 1.000
-ScreenGui.SliderCurrent.Position = UDim2.new(0.7317276, 0, 0.0190477241, 0)
-ScreenGui.SliderCurrent.Size = UDim2.new(0, 73, 0, 19)
-ScreenGui.SliderCurrent.Font = Enum.Font.Merriweather
-ScreenGui.SliderCurrent.Text = "1"
-ScreenGui.SliderCurrent.TextColor3 = Color3.fromRGB(192, 192, 192)
-ScreenGui.SliderCurrent.TextSize = 20.000
-ScreenGui.SliderCurrent.TextWrapped = true
-
-ScreenGui.FarmingText.Name = "FarmingText"
-ScreenGui.FarmingText.Parent = ScreenGui.OthersF
-ScreenGui.FarmingText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScreenGui.FarmingText.BackgroundTransparency = 1.000
-ScreenGui.FarmingText.Position = UDim2.new(0.223, 0,0.51, 0)
-ScreenGui.FarmingText.Size = UDim2.new(0, 215, 0, 38)
-ScreenGui.FarmingText.Font = Enum.Font.Merriweather
-ScreenGui.FarmingText.Text = "Combat:"
-ScreenGui.FarmingText.TextColor3 = Color3.fromRGB(136, 136, 136)
-ScreenGui.FarmingText.TextSize = 19.000
-
 ScreenGui.TextLIne_8.Name = "TextLIne"
 ScreenGui.TextLIne_8.Parent = ScreenGui.OthersF
 ScreenGui.TextLIne_8.BackgroundColor3 = Color3.fromRGB(145, 145, 145)
 ScreenGui.TextLIne_8.BorderColor3 = Color3.fromRGB(145, 145, 145)
-ScreenGui.TextLIne_8.Position = UDim2.new(0.178, 0,0.606, 0)
-ScreenGui.TextLIne_8.Size = UDim2.new(0, 256, 0, 0)
+ScreenGui.TextLIne_8.Position = UDim2.new(0.027, 0,0.572, 0)
+ScreenGui.TextLIne_8.Size = UDim2.new(0, 374,0, 0)
 
-ScreenGui.DropDown.Name = "DropDown"
-ScreenGui.DropDown.Parent = ScreenGui.OthersF
-ScreenGui.DropDown.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-ScreenGui.DropDown.ClipsDescendants = true
-ScreenGui.DropDown.Position = UDim2.new(0.0965373144, 0, 0.733086467, 0)
-ScreenGui.DropDown.Size = UDim2.new(0, 307, 0, 34)
-
-ScreenGui.UICorner_68.Parent = ScreenGui.DropDown
-
-ScreenGui.Text_2.Name = "Text"
-ScreenGui.Text_2.Parent = ScreenGui.DropDown
-ScreenGui.Text_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScreenGui.Text_2.BackgroundTransparency = 1.000
-ScreenGui.Text_2.Position = UDim2.new(0.0145677198, 0, 0.019374175, 0)
-ScreenGui.Text_2.Size = UDim2.new(0, 180, 0, 31)
-ScreenGui.Text_2.Font = Enum.Font.Merriweather
-ScreenGui.Text_2.Text = "Hit-Box Colors"
-ScreenGui.Text_2.TextColor3 = Color3.fromRGB(192, 192, 192)
-ScreenGui.Text_2.TextSize = 19.000
-ScreenGui.Text_2.TextWrapped = true
-
-ScreenGui.Frame.Parent = ScreenGui.DropDown
-ScreenGui.Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScreenGui.Frame.BackgroundTransparency = 1.000
-ScreenGui.Frame.Position = UDim2.new(0.00325732888, 0, 0.247863248, 0)
-ScreenGui.Frame.Size = UDim2.new(0, 303, 0, 100)
-ScreenGui.Frame.Visible = false
-
-ScreenGui.Purple.Name = "Purple"
-ScreenGui.Purple.Parent = ScreenGui.Frame
-ScreenGui.Purple.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-ScreenGui.Purple.Position = UDim2.new(0.520418525, 0, 0.66570574, 0)
-ScreenGui.Purple.Size = UDim2.new(0, 135, 0, 24)
-ScreenGui.Purple.Font = Enum.Font.Merriweather
-ScreenGui.Purple.Text = "Purple"
-ScreenGui.Purple.TextColor3 = Color3.fromRGB(157, 157, 157)
-ScreenGui.Purple.TextSize = 19.000
-ScreenGui.Purple.TextWrapped = true
-
-ScreenGui.UICorner_69.Parent = ScreenGui.Purple
-
-ScreenGui.White.Name = "White"
-ScreenGui.White.Parent = ScreenGui.Frame
-ScreenGui.White.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-ScreenGui.White.Position = UDim2.new(0.553421855, 0, 0.364634365, 0)
-ScreenGui.White.Size = UDim2.new(0, 135, 0, 24)
-ScreenGui.White.Font = Enum.Font.Merriweather
-ScreenGui.White.Text = "White"
-ScreenGui.White.TextColor3 = Color3.fromRGB(157, 157, 157)
-ScreenGui.White.TextSize = 19.000
-ScreenGui.White.TextWrapped = true
-
-ScreenGui.UICorner_70.Parent = ScreenGui.White
-
-ScreenGui.Green.Name = "Green"
-ScreenGui.Green.Parent = ScreenGui.Frame
-ScreenGui.Green.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-ScreenGui.Green.Position = UDim2.new(0.042021215, 0, 0.665705919, 0)
-ScreenGui.Green.Size = UDim2.new(0, 135, 0, 24)
-ScreenGui.Green.Font = Enum.Font.Merriweather
-ScreenGui.Green.Text = "Green"
-ScreenGui.Green.TextColor3 = Color3.fromRGB(157, 157, 157)
-ScreenGui.Green.TextSize = 19.000
-ScreenGui.Green.TextWrapped = true
-
-ScreenGui.UICorner_71.Parent = ScreenGui.Green
-
-ScreenGui.Red.Name = "Red"
-ScreenGui.Red.Parent = ScreenGui.Frame
-ScreenGui.Red.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-ScreenGui.Red.Position = UDim2.new(0.042021241, 0, 0.364634424, 0)
-ScreenGui.Red.Size = UDim2.new(0, 135, 0, 24)
-ScreenGui.Red.Font = Enum.Font.Merriweather
-ScreenGui.Red.Text = "Red"
-ScreenGui.Red.TextColor3 = Color3.fromRGB(157, 157, 157)
-ScreenGui.Red.TextSize = 19.000
-ScreenGui.Red.TextWrapped = true
-
-ScreenGui.UICorner_72.Parent = ScreenGui.Red
-
-ScreenGui.Blue.Name = "Blue"
-ScreenGui.Blue.Parent = ScreenGui.Frame
-ScreenGui.Blue.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-ScreenGui.Blue.Position = UDim2.new(0.282945305, 0, 0.104634412, 0)
-ScreenGui.Blue.Size = UDim2.new(0, 135, 0, 24)
-ScreenGui.Blue.Font = Enum.Font.Merriweather
-ScreenGui.Blue.Text = "Blue"
-ScreenGui.Blue.TextColor3 = Color3.fromRGB(157, 157, 157)
-ScreenGui.Blue.TextSize = 19.000
-ScreenGui.Blue.TextWrapped = true
-
-ScreenGui.UICorner_73.Parent = ScreenGui.Blue
-
-ScreenGui.DropBtn.Name = "DropBtn"
-ScreenGui.DropBtn.Parent = ScreenGui.DropDown
-ScreenGui.DropBtn.Position = UDim2.new(0.680781782, 0, 0.0294117648, 0)
-ScreenGui.DropBtn.Size = UDim2.new(0, 83, 0, 31)
-ScreenGui.DropBtn.ZIndex = 2
-ScreenGui.DropBtn.Image = "rbxassetid://6764432408"
-ScreenGui.DropBtn.ImageRectOffset = Vector2.new(0, 600)
-ScreenGui.DropBtn.ImageRectSize = Vector2.new(50, 50)
-ScreenGui.DropBtn.ScaleType = Enum.ScaleType.Fit
-
-ScreenGui.UICorner_74.Parent = ScreenGui.DropBtn
 
 ScreenGui.ScrollFrame.Name = "ScrollFrame"
 ScreenGui.ScrollFrame.Parent = ScreenGui.OthersF
 ScreenGui.ScrollFrame.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
 ScreenGui.ScrollFrame.ClipsDescendants = true
-ScreenGui.ScrollFrame.Position = UDim2.new(0.0970149189, 0, 0.285185248, 0)
+ScreenGui.ScrollFrame.Position = UDim2.new(0.112, 0,0.412, 0)
 ScreenGui.ScrollFrame.Size = UDim2.new(0, 307, 0, 34)
 
 ScreenGui.UICorner_75.Parent = ScreenGui.ScrollFrame
 
-ScreenGui.Text_3.Name = "Text"
-ScreenGui.Text_3.Parent = ScreenGui.ScrollFrame
-ScreenGui.Text_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScreenGui.Text_3.BackgroundTransparency = 1.000
-ScreenGui.Text_3.Position = UDim2.new(0.0406263508, 0, 0.0781977028, 0)
-ScreenGui.Text_3.Size = UDim2.new(0, 132, 0, 31)
-ScreenGui.Text_3.Font = Enum.Font.Merriweather
-ScreenGui.Text_3.Text = "Scroll Status:"
-ScreenGui.Text_3.TextColor3 = Color3.fromRGB(192, 192, 192)
-ScreenGui.Text_3.TextSize = 19.000
-ScreenGui.Text_3.TextWrapped = true
+ScreenGui.ScrollText.Name = "Text"
+ScreenGui.ScrollText.Parent = ScreenGui.ScrollFrame
+ScreenGui.ScrollText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.ScrollText.BackgroundTransparency = 1.000
+ScreenGui.ScrollText.Position = UDim2.new(0.0406263508, 0, 0.0781977028, 0)
+ScreenGui.ScrollText.Size = UDim2.new(0, 132, 0, 31)
+ScreenGui.ScrollText.Font = Enum.Font.Merriweather
+ScreenGui.ScrollText.Text = "Scroll Status:"
+ScreenGui.ScrollText.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScreenGui.ScrollText.TextSize = 19.000
+ScreenGui.ScrollText.TextWrapped = true
 
 ScreenGui.ScrollTP.Name = "ScrollTP"
 ScreenGui.ScrollTP.Parent = ScreenGui.ScrollFrame
@@ -2462,17 +2359,6 @@ ScreenGui.HitboxTransparency.Size = UDim2.new(0, 307, 0, 32)
 
 ScreenGui.UICorner_77.Parent = ScreenGui.HitboxTransparency
 
-ScreenGui.Text_4.Name = "Text"
-ScreenGui.Text_4.Parent = ScreenGui.HitboxTransparency
-ScreenGui.Text_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScreenGui.Text_4.BackgroundTransparency = 1.000
-ScreenGui.Text_4.Position = UDim2.new(0.0243397076, 0, 0.00883819163, 0)
-ScreenGui.Text_4.Size = UDim2.new(0, 195, 0, 31)
-ScreenGui.Text_4.Font = Enum.Font.Merriweather
-ScreenGui.Text_4.Text = "HitBox Transparency"
-ScreenGui.Text_4.TextColor3 = Color3.fromRGB(192, 192, 192)
-ScreenGui.Text_4.TextSize = 19.000
-ScreenGui.Text_4.TextWrapped = true
 
 ScreenGui.TextBox.Parent = ScreenGui.HitboxTransparency
 ScreenGui.TextBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -2510,7 +2396,7 @@ ScreenGui.MaxLevel.MouseButton1Click:Connect(function()
 	local level;
 	local repStorage = game:GetService("ReplicatedStorage")
 	local gameEvent = repStorage.NetworkFolder.GameFunction
-	
+
 	local FunnyPart = Instance.new("Part",wrkSpace)
 
 	FunnyPart.Size = Vector3.new(.5,.5,.5)
@@ -2537,10 +2423,9 @@ ScreenGui.MaxLevel.MouseButton1Click:Connect(function()
 		end
 	end)
 
-	character.BattlerHealth:Destroy()
 
 	local function maxLevel()
-		
+        character.BattlerHealth:Destroy()
 		for i = 0,20 do -- Red Lotus Quest
 			task.spawn(function()
 				while i < 20 do
@@ -3381,7 +3266,7 @@ ScreenGui.JumpRound.Parent =ScreenGui.JumpTB
 ScreenGui.ElementBtn.Name = "ElementBtn"
 ScreenGui.ElementBtn.Parent = ScreenGui.OthersF
 ScreenGui.ElementBtn.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-ScreenGui.ElementBtn.Position = UDim2.new(0.534825861, 0, 0.413580239, 0)
+ScreenGui.ElementBtn.Position = UDim2.new(0.535, 0,0.66, 0)
 ScreenGui.ElementBtn.Size = UDim2.new(0, 171, 0, 34)
 ScreenGui.ElementBtn.Font = Enum.Font.Merriweather
 ScreenGui.ElementBtn.Text = "Element Change"
@@ -3394,7 +3279,7 @@ ScreenGui.Roundify.Parent = ScreenGui.ElementBtn
 ScreenGui.ShopBtn.Name = "ShopBtn"
 ScreenGui.ShopBtn.Parent = ScreenGui.OthersF
 ScreenGui.ShopBtn.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-ScreenGui.ShopBtn.Position = UDim2.new(0.0422885567, 0, 0.413580239, 0)
+ScreenGui.ShopBtn.Position = UDim2.new(0.042, 0,0.66, 0)
 ScreenGui.ShopBtn.Size = UDim2.new(0, 171, 0, 34)
 ScreenGui.ShopBtn.Font = Enum.Font.Merriweather
 ScreenGui.ShopBtn.Text = "Open Shop"
@@ -3404,6 +3289,617 @@ ScreenGui.ShopBtn.TextWrapped = true
 
 ScreenGui.Roundify2.Parent = ScreenGui.ShopBtn
 
+ScreenGui.QuitLotus.Name = "QuitLotus"
+ScreenGui.QuitLotus.Parent = ScreenGui.OthersF
+ScreenGui.QuitLotus.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+ScreenGui.QuitLotus.Position = UDim2.new(0.186567158, 0, 0.280864209, 0)
+ScreenGui.QuitLotus.Size = UDim2.new(0, 255, 0, 34)
+ScreenGui.QuitLotus.Font = Enum.Font.Merriweather
+ScreenGui.QuitLotus.Text = "Quit Lotus"
+ScreenGui.QuitLotus.TextColor3 = Color3.fromRGB(157, 157, 157)
+ScreenGui.QuitLotus.TextSize = 19.000
+ScreenGui.QuitLotus.TextWrapped = true
+
+ScreenGui.QuitLotusRound.Name = "QuitLotusRound"
+ScreenGui.QuitLotusRound.Parent = ScreenGui.QuitLotus
+
+ScreenGui.CombatBtn.Name = "CombatBtn"
+ScreenGui.CombatBtn.Parent = ScreenGui.OthersF
+ScreenGui.CombatBtn.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+ScreenGui.CombatBtn.Position = UDim2.new(0.111940302, 0, 0.796296239, 0)
+ScreenGui.CombatBtn.Size = UDim2.new(0, 307, 0, 34)
+ScreenGui.CombatBtn.Font = Enum.Font.Merriweather
+ScreenGui.CombatBtn.Text = "Open Combat & ESP"
+ScreenGui.CombatBtn.TextColor3 = Color3.fromRGB(157, 157, 157)
+ScreenGui.CombatBtn.TextSize = 19.000
+ScreenGui.CombatBtn.TextWrapped = true
+
+ScreenGui.CombatCorner.Name = "CombatCorner"
+ScreenGui.CombatCorner.Parent = ScreenGui.CombatBtn
+
+
+
+
+ScreenGui.CombatF.Name = "CombatF"
+ScreenGui.CombatF.Parent = ScreenGui.Main
+ScreenGui.CombatF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.CombatF.BackgroundTransparency = 1.000
+ScreenGui.CombatF.Position = UDim2.new(0.25, 0, 0.00806451589, 0)
+ScreenGui.CombatF.Size = UDim2.new(0, 402, 0, 324)
+ScreenGui.CombatF.Visible = false
+
+ScreenGui.CombatText.Name = "CombatText"
+ScreenGui.CombatText.Parent = ScreenGui.CombatF
+ScreenGui.CombatText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.CombatText.BackgroundTransparency = 1.000
+ScreenGui.CombatText.Position = UDim2.new(0.178786546, 0, 0, 0)
+ScreenGui.CombatText.Size = UDim2.new(0, 238, 0, 38)
+ScreenGui.CombatText.Font = Enum.Font.Merriweather
+ScreenGui.CombatText.Text = "Combat & ESP"
+ScreenGui.CombatText.TextColor3 = Color3.fromRGB(136, 136, 136)
+ScreenGui.CombatText.TextSize = 19.000
+
+ScreenGui.Combat2Line.Name = "Combat2Line"
+ScreenGui.Combat2Line.Parent = ScreenGui.CombatF
+ScreenGui.Combat2Line.BackgroundColor3 = Color3.fromRGB(145, 145, 145)
+ScreenGui.Combat2Line.BorderColor3 = Color3.fromRGB(145, 145, 145)
+ScreenGui.Combat2Line.Position = UDim2.new(0.0590779334, 0, 0.557065964, 0)
+ScreenGui.Combat2Line.Size = UDim2.new(0, 350, 0, 0)
+
+ScreenGui.AimbotF.Name = "AimbotF"
+ScreenGui.AimbotF.Parent = ScreenGui.CombatF
+ScreenGui.AimbotF.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ScreenGui.AimbotF.BorderColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.AimbotF.Position = UDim2.new(0.0396126062, 0, 0.172839612, 0)
+ScreenGui.AimbotF.Size = UDim2.new(0, 168, 0, 50)
+
+ScreenGui.AimbotDivide.Name = "AimbotDivide"
+ScreenGui.AimbotDivide.Parent = ScreenGui.AimbotF
+ScreenGui.AimbotDivide.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.AimbotDivide.BorderColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.AimbotDivide.Position = UDim2.new(0.499649882, 0, -0.0199999996, 0)
+ScreenGui.AimbotDivide.Size = UDim2.new(0, 0, 0, 50)
+
+ScreenGui.AimbotText.Name = "AimbotText"
+ScreenGui.AimbotText.Parent = ScreenGui.AimbotF
+ScreenGui.AimbotText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.AimbotText.BackgroundTransparency = 1.000
+ScreenGui.AimbotText.Position = UDim2.new(-0.000756040215, 0, 0, 0)
+ScreenGui.AimbotText.Size = UDim2.new(0, 76, 0, 50)
+ScreenGui.AimbotText.Font = Enum.Font.Merriweather
+ScreenGui.AimbotText.Text = "Aimbot:"
+ScreenGui.AimbotText.TextColor3 = Color3.fromRGB(136, 136, 136)
+ScreenGui.AimbotText.TextSize = 19.000
+
+ScreenGui.AimFrame.Name = "AimFrame"
+ScreenGui.AimFrame.Parent = ScreenGui.AimbotF
+ScreenGui.AimFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.AimFrame.BackgroundTransparency = 1.000
+ScreenGui.AimFrame.Position = UDim2.new(0.529999971, 0, 0.184081644, 0)
+ScreenGui.AimFrame.Size = UDim2.new(0, 77, 0, 30)
+ScreenGui.AimFrame.Image = "rbxassetid://3570695787"
+ScreenGui.AimFrame.ImageColor3 = Color3.fromRGB(33, 33, 33)
+ScreenGui.AimFrame.ScaleType = Enum.ScaleType.Slice
+ScreenGui.AimFrame.SliceCenter = Rect.new(100, 100, 100, 100)
+ScreenGui.AimFrame.SliceScale = 0.120
+
+ScreenGui.AimCircle.Name = "AimCircle"
+ScreenGui.AimCircle.Parent = ScreenGui.AimFrame
+ScreenGui.AimCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.AimCircle.BackgroundTransparency = 1.000
+ScreenGui.AimCircle.Size = UDim2.new(0, 37, 0, 29)
+ScreenGui.AimCircle.Image = "rbxassetid://3570695787"
+ScreenGui.AimCircle.ImageColor3 = Color3.fromRGB(255, 0, 0)
+ScreenGui.AimCircle.ScaleType = Enum.ScaleType.Slice
+ScreenGui.AimCircle.SliceCenter = Rect.new(100, 100, 100, 100)
+ScreenGui.AimCircle.SliceScale = 0.120
+
+ScreenGui.AimBtn.Name = "AimBtn"
+ScreenGui.AimBtn.Parent = ScreenGui.AimCircle
+ScreenGui.AimBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.AimBtn.BackgroundTransparency = 1.000
+ScreenGui.AimBtn.Position = UDim2.new(0, 0, 0.0115091959, 0)
+ScreenGui.AimBtn.Size = UDim2.new(0, 40, 0, 33)
+ScreenGui.AimBtn.ZIndex = 5
+ScreenGui.AimBtn.Font = Enum.Font.SourceSans
+ScreenGui.AimBtn.Text = ""
+ScreenGui.AimBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.AimBtn.TextSize = 14.000
+
+ScreenGui.AimOff.Name = "AimOff"
+ScreenGui.AimOff.Parent = ScreenGui.AimFrame
+ScreenGui.AimOff.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.AimOff.BackgroundTransparency = 1.000
+ScreenGui.AimOff.Position = UDim2.new(0.480519474, 0, -0.13333334, 0)
+ScreenGui.AimOff.Size = UDim2.new(0, 40, 0, 30)
+ScreenGui.AimOff.Font = Enum.Font.SourceSansBold
+ScreenGui.AimOff.Text = "-"
+ScreenGui.AimOff.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.AimOff.TextSize = 17.000
+
+ScreenGui.AimOn.Name = "AimOn"
+ScreenGui.AimOn.Parent = ScreenGui.AimFrame
+ScreenGui.AimOn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.AimOn.BackgroundTransparency = 1.000
+ScreenGui.AimOn.Position = UDim2.new(0, 0, -0.0333333015, 0)
+ScreenGui.AimOn.Size = UDim2.new(0, 40, 0, 30)
+ScreenGui.AimOn.Visible = false
+ScreenGui.AimOn.Font = Enum.Font.SourceSansBold
+ScreenGui.AimOn.Text = "0"
+ScreenGui.AimOn.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.AimOn.TextSize = 17.000
+
+ScreenGui.DropDown.Name = "DropDown"
+ScreenGui.DropDown.Parent = ScreenGui.CombatF
+ScreenGui.DropDown.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+ScreenGui.DropDown.ClipsDescendants = true
+ScreenGui.DropDown.Position = UDim2.new(0.0396125764, 0, 0.714629591, 0)
+ScreenGui.DropDown.Size = UDim2.new(0, 363, 0, 34)
+ScreenGui.DropDown.ZIndex = 3
+
+ScreenGui.DropDownRound.Name = "DropDownRound"
+ScreenGui.DropDownRound.Parent = ScreenGui.DropDown
+
+ScreenGui.Text.Name = "Text"
+ScreenGui.Text.Parent = ScreenGui.DropDown
+ScreenGui.Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.Text.BackgroundTransparency = 1.000
+ScreenGui.Text.Position = UDim2.new(0.082971625, 0, 0.0781977028, 0)
+ScreenGui.Text.Size = UDim2.new(0, 180, 0, 31)
+ScreenGui.Text.Font = Enum.Font.Merriweather
+ScreenGui.Text.Text = "Hit-Box Colors"
+ScreenGui.Text.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScreenGui.Text.TextSize = 19.000
+ScreenGui.Text.TextWrapped = true
+
+ScreenGui.Frame.Parent = ScreenGui.DropDown
+ScreenGui.Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.Frame.BackgroundTransparency = 1.000
+ScreenGui.Frame.Position = UDim2.new(0.00325722597, 0, 0.247862875, 0)
+ScreenGui.Frame.Size = UDim2.new(0, 362, 0, 100)
+ScreenGui.Frame.Visible = false
+
+ScreenGui.Purple.Name = "Purple"
+ScreenGui.Purple.Parent = ScreenGui.Frame
+ScreenGui.Purple.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ScreenGui.Purple.Position = UDim2.new(0.520418525, 0, 0.66570574, 0)
+ScreenGui.Purple.Size = UDim2.new(0, 135, 0, 24)
+ScreenGui.Purple.Font = Enum.Font.Merriweather
+ScreenGui.Purple.Text = "Purple"
+ScreenGui.Purple.TextColor3 = Color3.fromRGB(157, 157, 157)
+ScreenGui.Purple.TextSize = 19.000
+ScreenGui.Purple.TextWrapped = true
+
+ScreenGui.H_PurpleRound.Name = "H_PurpleRound"
+ScreenGui.H_PurpleRound.Parent = ScreenGui.Purple
+
+ScreenGui.White.Name = "White"
+ScreenGui.White.Parent = ScreenGui.Frame
+ScreenGui.White.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ScreenGui.White.Position = UDim2.new(0.553421855, 0, 0.364634365, 0)
+ScreenGui.White.Size = UDim2.new(0, 135, 0, 24)
+ScreenGui.White.Font = Enum.Font.Merriweather
+ScreenGui.White.Text = "White"
+ScreenGui.White.TextColor3 = Color3.fromRGB(157, 157, 157)
+ScreenGui.White.TextSize = 19.000
+ScreenGui.White.TextWrapped = true
+
+ScreenGui.H_WhiteRound.Name = "H_WhiteRound"
+ScreenGui.H_WhiteRound.Parent = ScreenGui.White
+
+ScreenGui.Green.Name = "Green"
+ScreenGui.Green.Parent = ScreenGui.Frame
+ScreenGui.Green.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ScreenGui.Green.Position = UDim2.new(0.042021215, 0, 0.665705919, 0)
+ScreenGui.Green.Size = UDim2.new(0, 135, 0, 24)
+ScreenGui.Green.Font = Enum.Font.Merriweather
+ScreenGui.Green.Text = "Green"
+ScreenGui.Green.TextColor3 = Color3.fromRGB(157, 157, 157)
+ScreenGui.Green.TextSize = 19.000
+ScreenGui.Green.TextWrapped = true
+
+ScreenGui.H_GreenRound.Name = "H_GreenRound"
+ScreenGui.H_GreenRound.Parent = ScreenGui.Green
+
+ScreenGui.Red.Name = "Red"
+ScreenGui.Red.Parent = ScreenGui.Frame
+ScreenGui.Red.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ScreenGui.Red.Position = UDim2.new(0.042021241, 0, 0.364634424, 0)
+ScreenGui.Red.Size = UDim2.new(0, 135, 0, 24)
+ScreenGui.Red.Font = Enum.Font.Merriweather
+ScreenGui.Red.Text = "Red"
+ScreenGui.Red.TextColor3 = Color3.fromRGB(157, 157, 157)
+ScreenGui.Red.TextSize = 19.000
+ScreenGui.Red.TextWrapped = true
+
+ScreenGui.H_RedRound.Name = "H_RedRound"
+ScreenGui.H_RedRound.Parent = ScreenGui.Red
+
+ScreenGui.Blue.Name = "Blue"
+ScreenGui.Blue.Parent =ScreenGui.Frame
+ScreenGui.Blue.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ScreenGui.Blue.Position = UDim2.new(0.282945305, 0, 0.104634412, 0)
+ScreenGui.Blue.Size = UDim2.new(0, 135, 0, 24)
+ScreenGui.Blue.Font = Enum.Font.Merriweather
+ScreenGui.Blue.Text = "Blue"
+ScreenGui.Blue.TextColor3 = Color3.fromRGB(157, 157, 157)
+ScreenGui.Blue.TextSize = 19.000
+ScreenGui.Blue.TextWrapped = true
+
+ScreenGui.H_BlueRound.Name = "H_BlueRound"
+ScreenGui.H_BlueRound.Parent = ScreenGui.Blue
+
+ScreenGui.DropBtn.Name = "DropBtn"
+ScreenGui.DropBtn.Parent = ScreenGui.DropDown
+ScreenGui.DropBtn.Position = UDim2.new(0.680781782, 0, 0.0294117648, 0)
+ScreenGui.DropBtn.Size = UDim2.new(0, 83, 0, 31)
+ScreenGui.DropBtn.ZIndex = 2
+ScreenGui.DropBtn.Image = "rbxassetid://6764432408"
+ScreenGui.DropBtn.ImageRectOffset = Vector2.new(0, 600)
+ScreenGui.DropBtn.ImageRectSize = Vector2.new(50, 50)
+ScreenGui.DropBtn.ScaleType = Enum.ScaleType.Fit
+
+ScreenGui.DropRound.Name = "DropRound"
+ScreenGui.DropRound.Parent = ScreenGui.DropBtn
+
+ScreenGui.HitBoxSize.Name = "HitBoxSize"
+ScreenGui.HitBoxSize.Parent = ScreenGui.CombatF
+ScreenGui.HitBoxSize.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+ScreenGui.HitBoxSize.Position = UDim2.new(0.0396125764, 0, 0.8296296, 0)
+ScreenGui.HitBoxSize.Size = UDim2.new(0, 364, 0, 38)
+
+ScreenGui.SizeCorner.Name = "SizeCorner"
+ScreenGui.SizeCorner.Parent = ScreenGui.HitBoxSize
+
+ScreenGui.Text_2.Name = "Text"
+ScreenGui.Text_2.Parent = ScreenGui.HitBoxSize
+ScreenGui.Text_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.Text_2.BackgroundTransparency = 1.000
+ScreenGui.Text_2.Position = UDim2.new(0.223036975, 0, -0.0335837901, 0)
+ScreenGui.Text_2.Size = UDim2.new(0, 147, 0, 21)
+ScreenGui.Text_2.Font = Enum.Font.Merriweather
+ScreenGui.Text_2.Text = "Hit-Box Size"
+ScreenGui.Text_2.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScreenGui.Text_2.TextSize = 19.000
+ScreenGui.Text_2.TextWrapped = true
+
+ScreenGui.SliderBtn.Name = "SliderBtn"
+ScreenGui.SliderBtn.Parent = ScreenGui.HitBoxSize
+ScreenGui.SliderBtn.BackgroundColor3 = Color3.fromRGB(16, 98, 162)
+ScreenGui.SliderBtn.BackgroundTransparency = 1.000
+ScreenGui.SliderBtn.BorderSizePixel = 0
+ScreenGui.SliderBtn.Position = UDim2.new(0.0555555113, 0, 0.521428406, 0)
+ScreenGui.SliderBtn.Size = UDim2.new(0, 253, 0, 13)
+ScreenGui.SliderBtn.Font = Enum.Font.SourceSans
+ScreenGui.SliderBtn.Text = ""
+ScreenGui.SliderBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.SliderBtn.TextSize = 14.000
+
+ScreenGui.SliderBtn_Roundify_12px.Name = "SliderBtn_Roundify_12px"
+ScreenGui.SliderBtn_Roundify_12px.Parent = ScreenGui.SliderBtn
+ScreenGui.SliderBtn_Roundify_12px.Active = true
+ScreenGui.SliderBtn_Roundify_12px.AnchorPoint = Vector2.new(0.5, 0.5)
+ScreenGui.SliderBtn_Roundify_12px.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+ScreenGui.SliderBtn_Roundify_12px.BackgroundTransparency = 1.000
+ScreenGui.SliderBtn_Roundify_12px.BorderColor3 = Color3.fromRGB(27, 42, 53)
+ScreenGui.SliderBtn_Roundify_12px.Position = UDim2.new(0.687624514, 0, 0.676923096, 0)
+ScreenGui.SliderBtn_Roundify_12px.Selectable = true
+ScreenGui.SliderBtn_Roundify_12px.Size = UDim2.new(0.966995001, 0, 1, 0)
+ScreenGui.SliderBtn_Roundify_12px.Image = "rbxassetid://3570695787"
+ScreenGui.SliderBtn_Roundify_12px.ImageColor3 = Color3.fromRGB(139, 139, 139)
+ScreenGui.SliderBtn_Roundify_12px.ScaleType = Enum.ScaleType.Slice
+ScreenGui.SliderBtn_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
+ScreenGui.SliderBtn_Roundify_12px.SliceScale = 0.120
+
+ScreenGui.SliderInner.Name = "SliderInner"
+ScreenGui.SliderInner.Parent = ScreenGui.SliderBtn_Roundify_12px
+ScreenGui.SliderInner.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
+ScreenGui.SliderInner.BorderColor3 = Color3.fromRGB(185, 185, 185)
+ScreenGui.SliderInner.Size = UDim2.new(0, 8, 0, 13)
+
+ScreenGui.SliderInnerCorner.Parent = ScreenGui.SliderInner
+
+ScreenGui.SliderCurrent.Name = "SliderCurrent"
+ScreenGui.SliderCurrent.Parent = ScreenGui.HitBoxSize
+ScreenGui.SliderCurrent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.SliderCurrent.BackgroundTransparency = 1.000
+ScreenGui.SliderCurrent.Position = UDim2.new(0.669404626, 0, 0.0190477241, 0)
+ScreenGui.SliderCurrent.Size = UDim2.new(0, 73, 0, 19)
+ScreenGui.SliderCurrent.Font = Enum.Font.Merriweather
+ScreenGui.SliderCurrent.Text = "1"
+ScreenGui.SliderCurrent.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScreenGui.SliderCurrent.TextSize = 20.000
+ScreenGui.SliderCurrent.TextWrapped = true
+
+ScreenGui.HitboxTransparency.Name = "HitboxTransparency"
+ScreenGui.HitboxTransparency.Parent = ScreenGui.CombatF
+ScreenGui.HitboxTransparency.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+ScreenGui.HitboxTransparency.ClipsDescendants = true
+ScreenGui.HitboxTransparency.Position = UDim2.new(0.0396125764, 0, 0.602345586, 0)
+ScreenGui.HitboxTransparency.Size = UDim2.new(0, 363, 0, 32)
+
+ScreenGui.TransparencyRound.Name = "TransparencyRound"
+ScreenGui.TransparencyRound.Parent = ScreenGui.HitboxTransparency
+
+ScreenGui.Text_3.Name = "Text"
+ScreenGui.Text_3.Parent = ScreenGui.HitboxTransparency
+ScreenGui.Text_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.Text_3.BackgroundTransparency = 1.000
+ScreenGui.Text_3.Position = UDim2.new(0.0836617872, 0, 0.00883865356, 0)
+ScreenGui.Text_3.Size = UDim2.new(0, 208, 0, 31)
+ScreenGui.Text_3.Font = Enum.Font.Merriweather
+ScreenGui.Text_3.Text = "HitBox Transparency"
+ScreenGui.Text_3.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScreenGui.Text_3.TextSize = 19.000
+ScreenGui.Text_3.TextWrapped = true
+
+ScreenGui.TextBox.Parent = ScreenGui.HitboxTransparency
+ScreenGui.TextBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ScreenGui.TextBox.Position = UDim2.new(0.766183257, 0, 0.029999733, 0)
+ScreenGui.TextBox.Size = UDim2.new(0, 66, 0, 30)
+ScreenGui.TextBox.Font = Enum.Font.Merriweather
+ScreenGui.TextBox.PlaceholderText = "0-1"
+ScreenGui.TextBox.Text = ""
+ScreenGui.TextBox.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScreenGui.TextBox.TextSize = 19.000
+
+ScreenGui.TextBoxCorner.Parent = ScreenGui.TextBox
+
+ScreenGui.LineEspF.Name = "LineEspF"
+ScreenGui.LineEspF.Parent = ScreenGui.CombatF
+ScreenGui.LineEspF.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ScreenGui.LineEspF.BorderColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.LineEspF.Position = UDim2.new(0.0396126062, 0, 0.348765552, 0)
+ScreenGui.LineEspF.Size = UDim2.new(0, 168, 0, 50)
+
+ScreenGui.LineDivide.Name = "LineDivide"
+ScreenGui.LineDivide.Parent = ScreenGui.LineEspF
+ScreenGui.LineDivide.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.LineDivide.BorderColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.LineDivide.Position = UDim2.new(0.499649882, 0, -0.0199999996, 0)
+ScreenGui.LineDivide.Size = UDim2.new(0, 0, 0, 50)
+
+ScreenGui.LineFrame.Name = "LineFrame"
+ScreenGui.LineFrame.Parent = ScreenGui.LineEspF
+ScreenGui.LineFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.LineFrame.BackgroundTransparency = 1.000
+ScreenGui.LineFrame.Position = UDim2.new(0.529999971, 0, 0.184081644, 0)
+ScreenGui.LineFrame.Size = UDim2.new(0, 77, 0, 30)
+ScreenGui.LineFrame.Image = "rbxassetid://3570695787"
+ScreenGui.LineFrame.ImageColor3 = Color3.fromRGB(33, 33, 33)
+ScreenGui.LineFrame.ScaleType = Enum.ScaleType.Slice
+ScreenGui.LineFrame.SliceCenter = Rect.new(100, 100, 100, 100)
+ScreenGui.LineFrame.SliceScale = 0.120
+
+ScreenGui.LineCircle.Name = "LineCircle"
+ScreenGui.LineCircle.Parent = ScreenGui.LineFrame
+ScreenGui.LineCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.LineCircle.BackgroundTransparency = 1.000
+ScreenGui.LineCircle.Size = UDim2.new(0, 37, 0, 29)
+ScreenGui.LineCircle.Image = "rbxassetid://3570695787"
+ScreenGui.LineCircle.ImageColor3 = Color3.fromRGB(255, 0, 0)
+ScreenGui.LineCircle.ScaleType = Enum.ScaleType.Slice
+ScreenGui.LineCircle.SliceCenter = Rect.new(100, 100, 100, 100)
+ScreenGui.LineCircle.SliceScale = 0.120
+
+ScreenGui.LineESPBtn.Name = "LineESPBtn"
+ScreenGui.LineESPBtn.Parent = ScreenGui.LineCircle
+ScreenGui.LineESPBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.LineESPBtn.BackgroundTransparency = 1.000
+ScreenGui.LineESPBtn.Position = UDim2.new(0, 0, 0.0115091959, 0)
+ScreenGui.LineESPBtn.Size = UDim2.new(0, 40, 0, 33)
+ScreenGui.LineESPBtn.ZIndex = 5
+ScreenGui.LineESPBtn.Font = Enum.Font.SourceSans
+ScreenGui.LineESPBtn.Text = ""
+ScreenGui.LineESPBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.LineESPBtn.TextSize = 14.000
+
+ScreenGui.LineOff.Name = "LineOff"
+ScreenGui.LineOff.Parent = ScreenGui.LineFrame
+ScreenGui.LineOff.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.LineOff.BackgroundTransparency = 1.000
+ScreenGui.LineOff.Position = UDim2.new(0.480519474, 0, -0.13333334, 0)
+ScreenGui.LineOff.Size = UDim2.new(0, 40, 0, 30)
+ScreenGui.LineOff.Font = Enum.Font.SourceSansBold
+ScreenGui.LineOff.Text = "-"
+ScreenGui.LineOff.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.LineOff.TextSize = 17.000
+
+ScreenGui.LineOn.Name = "LineOn"
+ScreenGui.LineOn.Parent = ScreenGui.LineFrame
+ScreenGui.LineOn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.LineOn.BackgroundTransparency = 1.000
+ScreenGui.LineOn.Position = UDim2.new(0, 0, -0.0333333015, 0)
+ScreenGui.LineOn.Size = UDim2.new(0, 40, 0, 30)
+ScreenGui.LineOn.Visible = false
+ScreenGui.LineOn.Font = Enum.Font.SourceSansBold
+ScreenGui.LineOn.Text = "0"
+ScreenGui.LineOn.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.LineOn.TextSize = 17.000
+
+ScreenGui.LineText.Name = "LineText"
+ScreenGui.LineText.Parent = ScreenGui.LineEspF
+ScreenGui.LineText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.LineText.BackgroundTransparency = 1.000
+ScreenGui.LineText.Position = UDim2.new(-0.00571428798, 0, -0.0799999982, 0)
+ScreenGui.LineText.Size = UDim2.new(0, 76, 0, 50)
+ScreenGui.LineText.Font = Enum.Font.Merriweather
+ScreenGui.LineText.Text = "Line ESP:"
+ScreenGui.LineText.TextColor3 = Color3.fromRGB(136, 136, 136)
+ScreenGui.LineText.TextSize = 19.000
+
+ScreenGui.BoxF.Name = "BoxF"
+ScreenGui.BoxF.Parent = ScreenGui.CombatF
+ScreenGui.BoxF.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ScreenGui.BoxF.BorderColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.BoxF.Position = UDim2.new(0.532149911, 0, 0.172839627, 0)
+ScreenGui.BoxF.Size = UDim2.new(0, 168, 0, 50)
+
+ScreenGui.BoxDivide.Name = "BoxDivide"
+ScreenGui.BoxDivide.Parent = ScreenGui.BoxF
+ScreenGui.BoxDivide.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.BoxDivide.BorderColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.BoxDivide.Position = UDim2.new(0.499649882, 0, -0.0199999996, 0)
+ScreenGui.BoxDivide.Size = UDim2.new(0, 0, 0, 50)
+
+ScreenGui.BoxText.Name = "BoxText"
+ScreenGui.BoxText.Parent = ScreenGui.BoxF
+ScreenGui.BoxText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.BoxText.BackgroundTransparency = 1.000
+ScreenGui.BoxText.Position = UDim2.new(0.023053484, 0, -0.0199999996, 0)
+ScreenGui.BoxText.Size = UDim2.new(0, 76, 0, 50)
+ScreenGui.BoxText.Font = Enum.Font.Merriweather
+ScreenGui.BoxText.Text = "Box ESP:"
+ScreenGui.BoxText.TextColor3 = Color3.fromRGB(136, 136, 136)
+ScreenGui.BoxText.TextSize = 19.000
+
+ScreenGui.BoxFrame.Name = "BoxFrame"
+ScreenGui.BoxFrame.Parent = ScreenGui.BoxF
+ScreenGui.BoxFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.BoxFrame.BackgroundTransparency = 1.000
+ScreenGui.BoxFrame.Position = UDim2.new(0.529999971, 0, 0.184081644, 0)
+ScreenGui.BoxFrame.Size = UDim2.new(0, 77, 0, 30)
+ScreenGui.BoxFrame.Image = "rbxassetid://3570695787"
+ScreenGui.BoxFrame.ImageColor3 = Color3.fromRGB(33, 33, 33)
+ScreenGui.BoxFrame.ScaleType = Enum.ScaleType.Slice
+ScreenGui.BoxFrame.SliceCenter = Rect.new(100, 100, 100, 100)
+ScreenGui.BoxFrame.SliceScale = 0.120
+
+ScreenGui.BoxCircle.Name = "BoxCircle"
+ScreenGui.BoxCircle.Parent = ScreenGui.BoxFrame
+ScreenGui.BoxCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.BoxCircle.BackgroundTransparency = 1.000
+ScreenGui.BoxCircle.Size = UDim2.new(0, 37, 0, 29)
+ScreenGui.BoxCircle.Image = "rbxassetid://3570695787"
+ScreenGui.BoxCircle.ImageColor3 = Color3.fromRGB(255, 0, 0)
+ScreenGui.BoxCircle.ScaleType = Enum.ScaleType.Slice
+ScreenGui.BoxCircle.SliceCenter = Rect.new(100, 100, 100, 100)
+ScreenGui.BoxCircle.SliceScale = 0.120
+
+ScreenGui.BoxBtn.Name = "BoxBtn"
+ScreenGui.BoxBtn.Parent = ScreenGui.BoxCircle
+ScreenGui.BoxBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.BoxBtn.BackgroundTransparency = 1.000
+ScreenGui.BoxBtn.Position = UDim2.new(0, 0, 0.0115091959, 0)
+ScreenGui.BoxBtn.Size = UDim2.new(0, 40, 0, 33)
+ScreenGui.BoxBtn.ZIndex = 5
+ScreenGui.BoxBtn.Font = Enum.Font.SourceSans
+ScreenGui.BoxBtn.Text = ""
+ScreenGui.BoxBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.BoxBtn.TextSize = 14.000
+
+ScreenGui.BoxOff.Name = "BoxOff"
+ScreenGui.BoxOff.Parent = ScreenGui.BoxFrame
+ScreenGui.BoxOff.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.BoxOff.BackgroundTransparency = 1.000
+ScreenGui.BoxOff.Position = UDim2.new(0.480519474, 0, -0.13333334, 0)
+ScreenGui.BoxOff.Size = UDim2.new(0, 40, 0, 30)
+ScreenGui.BoxOff.Font = Enum.Font.SourceSansBold
+ScreenGui.BoxOff.Text = "-"
+ScreenGui.BoxOff.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.BoxOff.TextSize = 17.000
+
+ScreenGui.BoxOn.Name = "BoxOn"
+ScreenGui.BoxOn.Parent = ScreenGui.BoxFrame
+ScreenGui.BoxOn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.BoxOn.BackgroundTransparency = 1.000
+ScreenGui.BoxOn.Position = UDim2.new(0, 0, -0.0333333015, 0)
+ScreenGui.BoxOn.Size = UDim2.new(0, 40, 0, 30)
+ScreenGui.BoxOn.Visible = false
+ScreenGui.BoxOn.Font = Enum.Font.SourceSansBold
+ScreenGui.BoxOn.Text = "0"
+ScreenGui.BoxOn.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.BoxOn.TextSize = 17.000
+
+ScreenGui.HealthF.Name = "HealthF"
+ScreenGui.HealthF.Parent = ScreenGui.CombatF
+ScreenGui.HealthF.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ScreenGui.HealthF.BorderColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.HealthF.Position = UDim2.new(0.529662371, 0, 0.348765552, 0)
+ScreenGui.HealthF.Size = UDim2.new(0, 168, 0, 50)
+
+ScreenGui.HealthDivide.Name = "HealthDivide"
+ScreenGui.HealthDivide.Parent = ScreenGui.HealthF
+ScreenGui.HealthDivide.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.HealthDivide.BorderColor3 = Color3.fromRGB(72, 72, 72)
+ScreenGui.HealthDivide.Position = UDim2.new(0.499649882, 0, -0.0199999996, 0)
+ScreenGui.HealthDivide.Size = UDim2.new(0, 0, 0, 50)
+
+ScreenGui.HealthText.Name = "HealthText"
+ScreenGui.HealthText.Parent = ScreenGui.HealthF
+ScreenGui.HealthText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.HealthText.BackgroundTransparency = 1.000
+ScreenGui.HealthText.Position = UDim2.new(0.0299999993, 0, 0, 0)
+ScreenGui.HealthText.Size = UDim2.new(0, 76, 0, 50)
+ScreenGui.HealthText.Font = Enum.Font.Merriweather
+ScreenGui.HealthText.Text = "Health Bar"
+ScreenGui.HealthText.TextColor3 = Color3.fromRGB(136, 136, 136)
+ScreenGui.HealthText.TextSize = 17.000
+
+ScreenGui.HealthFrame.Name = "HealthFrame"
+ScreenGui.HealthFrame.Parent = ScreenGui.HealthF
+ScreenGui.HealthFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.HealthFrame.BackgroundTransparency = 1.000
+ScreenGui.HealthFrame.Position = UDim2.new(0.529999971, 0, 0.184081644, 0)
+ScreenGui.HealthFrame.Size = UDim2.new(0, 77, 0, 30)
+ScreenGui.HealthFrame.Image = "rbxassetid://3570695787"
+ScreenGui.HealthFrame.ImageColor3 = Color3.fromRGB(33, 33, 33)
+ScreenGui.HealthFrame.ScaleType = Enum.ScaleType.Slice
+ScreenGui.HealthFrame.SliceCenter = Rect.new(100, 100, 100, 100)
+ScreenGui.HealthFrame.SliceScale = 0.120
+
+ScreenGui.HealthCircle.Name = "HealthCircle"
+ScreenGui.HealthCircle.Parent = ScreenGui.HealthFrame
+ScreenGui.HealthCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.HealthCircle.BackgroundTransparency = 1.000
+ScreenGui.HealthCircle.Size = UDim2.new(0, 37, 0, 29)
+ScreenGui.HealthCircle.Image = "rbxassetid://3570695787"
+ScreenGui.HealthCircle.ImageColor3 = Color3.fromRGB(255, 0, 0)
+ScreenGui.HealthCircle.ScaleType = Enum.ScaleType.Slice
+ScreenGui.HealthCircle.SliceCenter = Rect.new(100, 100, 100, 100)
+ScreenGui.HealthCircle.SliceScale = 0.120
+
+ScreenGui.HealthBtn.Name = "HealthBtn"
+ScreenGui.HealthBtn.Parent = ScreenGui.HealthCircle
+ScreenGui.HealthBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.HealthBtn.BackgroundTransparency = 1.000
+ScreenGui.HealthBtn.Position = UDim2.new(0, 0, 0.0115091959, 0)
+ScreenGui.HealthBtn.Size = UDim2.new(0, 40, 0, 33)
+ScreenGui.HealthBtn.ZIndex = 5
+ScreenGui.HealthBtn.Font = Enum.Font.SourceSans
+ScreenGui.HealthBtn.Text = ""
+ScreenGui.HealthBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.HealthBtn.TextSize = 14.000
+
+ScreenGui.HealthOff.Name = "HealthOff"
+ScreenGui.HealthOff.Parent = ScreenGui.HealthFrame
+ScreenGui.HealthOff.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.HealthOff.BackgroundTransparency = 1.000
+ScreenGui.HealthOff.Position = UDim2.new(0.480519474, 0, -0.13333334, 0)
+ScreenGui.HealthOff.Size = UDim2.new(0, 40, 0, 30)
+ScreenGui.HealthOff.Font = Enum.Font.SourceSansBold
+ScreenGui.HealthOff.Text = "-"
+ScreenGui.HealthOff.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.HealthOff.TextSize = 17.000
+
+ScreenGui.HealthOn.Name = "HealthOn"
+ScreenGui.HealthOn.Parent = ScreenGui.HealthFrame
+ScreenGui.HealthOn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.HealthOn.BackgroundTransparency = 1.000
+ScreenGui.HealthOn.Position = UDim2.new(0, 0, -0.0333333015, 0)
+ScreenGui.HealthOn.Size = UDim2.new(0, 40, 0, 30)
+ScreenGui.HealthOn.Visible = false
+ScreenGui.HealthOn.Font = Enum.Font.SourceSansBold
+ScreenGui.HealthOn.Text = "0"
+ScreenGui.HealthOn.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.HealthOn.TextSize = 17.000
+
+ScreenGui.CombatLine.Name = "CombatLine"
+ScreenGui.CombatLine.Parent = ScreenGui.CombatF
+ScreenGui.CombatLine.BackgroundColor3 = Color3.fromRGB(145, 145, 145)
+ScreenGui.CombatLine.BorderColor3 = Color3.fromRGB(145, 145, 145)
+ScreenGui.CombatLine.Position = UDim2.new(0.156092897, 0, 0.115707964, 0)
+ScreenGui.CombatLine.Size = UDim2.new(0, 256, 0, 0)
 ScreenGui.ElementFrame.Name = "ElementFrame"
 ScreenGui.ElementFrame.Parent = ScreenGui.Main
 ScreenGui.ElementFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5341,23 +5837,23 @@ local function VJTNDS_fake_script() -- FindFansBtn.LocalScript
 					task.wait()
 				end
 			end)
-				local args = {
-					[1] = "AdvanceStep",
-					[2] = {
-						["QuestName"] = "NoneQuest1",
-						["Step"] = i
-					}
+			local args = {
+				[1] = "AdvanceStep",
+				[2] = {
+					["QuestName"] = "NoneQuest1",
+					["Step"] = i
 				}
-				if Player:DistanceFromCharacter(kyoshiNPC.Head.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
-					break;
-				end
-				if i == 1 then
-					task.wait(0.5)
-				else
-					task.wait()
-				end
+			}
+			if Player:DistanceFromCharacter(kyoshiNPC.Head.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
+				break;
+			end
+			if i == 1 then
+				task.wait(0.5)
+			else
 				task.wait()
-				Event:InvokeServer(unpack(args))
+			end
+			task.wait()
+			Event:InvokeServer(unpack(args))
 			if i == 4 then
 				duration = false;
 				local abandon = {
@@ -5380,15 +5876,15 @@ local function SQDJ_fake_script() -- CollectFoodBtn.LocalScript
 	local noneNPC = game:GetService("Workspace").QuestNPCs.NoneNPC2[""]
 
 	local Players = game:GetService("Players")
-	
+
 	local Player = Players.LocalPlayer
-	
+
 	local Character = Player.Character
-	
+
 	local Humanoid = Character.Humanoid
-	
+
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-	
+
 	local duration;
 	local firstCFrame = Character.HumanoidRootPart.CFrame
 	function CollectFood()
@@ -5408,7 +5904,7 @@ local function SQDJ_fake_script() -- CollectFoodBtn.LocalScript
 					["Step"] = i
 				}
 			}
-	
+
 			if Player:DistanceFromCharacter(noneNPC.Head.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
 				break;
 			end
@@ -5430,7 +5926,7 @@ local function SQDJ_fake_script() -- CollectFoodBtn.LocalScript
 			end
 		end
 	end
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		CollectFood()
 	end)
@@ -5454,9 +5950,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			task.wait(1)
-			hum.Health = 0
-			repeat task.wait(0.1) until plr.CharacterAdded
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -5506,9 +6001,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			task.wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			task.wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -5555,9 +6049,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -5603,9 +6096,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -5652,9 +6144,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -5708,9 +6199,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -5757,9 +6247,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -5805,9 +6294,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -5854,9 +6342,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -5903,9 +6390,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -5951,9 +6437,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -6000,9 +6485,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -6048,9 +6532,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -6096,9 +6579,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -6146,9 +6628,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -6195,9 +6676,8 @@ local function EIE_fake_script()
 		cancel = true
 		local count = 0
 		repeat
-			wait(1)
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			wait(6)
+			repeat wait() until game.Players.LocalPlayer.CharacterAdded:Wait()
 			count = count + 1
 			local args = {
 				[1] = "NewGame",
@@ -6246,8 +6726,8 @@ local function CFKJQQ_fake_script() -- StatBox.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.StatBox)
 
 	script.Parent.FocusLost:Connect(function()
-		for i,v in pairs(game.Players:GetChildren()) do
-			if (string.sub(string.lower(v.Name),1,string.len(script.Parent.Text))) == string.lower(script.Parent.Text) then
+		for i,v in pairs(game.Players:GetPlayers()) do
+			if ( v ~= game.Players.LocalPlayer and (string.sub(string.lower(v.Name),1,string.len(script.Parent.Text))) == string.lower(script.Parent.Text)) then
 				script.Parent.Text = v.Name
 			end
 		end
@@ -6258,12 +6738,13 @@ local function DYYI_fake_script() -- StregnthF.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.StregnthF)
 
 	local t = script.Parent.StregnthValue
-	
+
 	local Tb = script.Parent.Parent.StatBox
-	
+
 	local Players = game:GetService("Players")
-	
-	while wait(0.5) do
+
+	while true do
+		task.wait(0.25)
 		for i,v in pairs(Players:GetChildren()) do
 			if Tb.Text == v.Name and v.PlayerData.Stats then
 				t.Text = tostring(v.PlayerData.Stats.Strength.Value)
@@ -6276,12 +6757,13 @@ local function GCXL_fake_script() -- StaminaF.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.StaminaF)
 
 	local t = script.Parent.StaminaValue
-	
+
 	local Tb = script.Parent.Parent.StatBox
-	
+
 	local Players = game:GetService("Players")
-	
-	while wait(0.5) do
+
+	while true do
+		task.wait(0.25)
 		for i,v in pairs(Players:GetChildren()) do
 			if Tb.Text == v.Name and v.PlayerData.Stats then
 				t.Text = tostring(v.PlayerData.Stats.Stamina.Value)
@@ -6294,16 +6776,17 @@ local function RXQFG_fake_script() -- DefenseF.LocalScript
 	local script = Instance.new('LocalScript',ScreenGui. DefenseF)
 
 	local t = script.Parent.DefenseValue
-	
+
 	local Tb = script.Parent.Parent.StatBox
-	
+
 	local Players = game:GetService("Players")
-	
-	while wait(0.5) do
+
+	while true do
+		task.wait(0.25)
 		for i,v in pairs(Players:GetChildren()) do
 			if Tb.Text == v.Name and v.PlayerData.Stats then
 				t.Text = tostring(v.PlayerData.Stats.Defense.Value)
-				
+
 			end
 		end
 	end
@@ -6312,14 +6795,15 @@ coroutine.wrap(RXQFG_fake_script)()
 local function SZGCBRW_fake_script() -- ElementF.LocalScript 
 	local script = Instance.new('LocalScript',ScreenGui.ElementF)
 
-	
+
 	local t = script.Parent.ElementValue
-	
+
 	local Tb = script.Parent.Parent.StatBox
-	
+
 	local Players = game:GetService("Players")
-	
-	while wait(0.5) do
+
+	while true do
+		task.wait(0.25)
 		for i,v in pairs(Players:GetChildren()) do
 			if Tb.Text == v.Name and v.PlayerData.Appearance then
 				t.Text = tostring(v.PlayerData.Appearance.Elements.Value)
@@ -6332,12 +6816,13 @@ local function HZPHAVN_fake_script() -- LevelF.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.LevelF)
 
 	local t = script.Parent.LevelValue
-	
+
 	local Tb = script.Parent.Parent.StatBox
-	
+
 	local Players = game:GetService("Players")
-	
-	while wait(0.5) do
+
+	while true do
+		task.wait(0.25)
 		for i,v in pairs(Players:GetChildren()) do
 			if Tb.Text == v.Name and v.PlayerData.Stats then
 				t.Text = tostring(v.PlayerData.Stats.Level.Value)
@@ -6350,12 +6835,13 @@ local function CWDEW_fake_script() -- SubF.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.SubF)
 
 	local t = script.Parent.SubValue
-	
+
 	local Tb = script.Parent.Parent.StatBox
-	
+
 	local Players = game:GetService("Players")
-	
-	while wait(0.5) do
+
+	while true do
+		task.wait(0.25)
 		for i,v in pairs(Players:GetChildren()) do
 			if Tb.Text == v.Name and v.PlayerData.Stats then
 				t.Text = tostring(v.PlayerData.Appearance.Special.Value)
@@ -6368,12 +6854,13 @@ local function UCGQST_fake_script() -- PiecesF.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.PiecesF)
 
 	local t = script.Parent.PiecesValue
-	
+
 	local Tb = script.Parent.Parent.StatBox
-	
+
 	local Players = game:GetService("Players")
-	
-	while wait(0.5) do
+
+	while true do
+		task.wait(0.25)
 		for i,v in pairs(Players:GetChildren()) do
 			if Tb.Text == v.Name and v.PlayerData.Stats then
 				t.Text = tostring(v.PlayerData.Stats.Money5.Value)
@@ -6386,12 +6873,13 @@ local function RSTE_fake_script() -- SkillPointF.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.SkillPointF)
 
 	local t = script.Parent.SkillValue
-	
+
 	local Tb = script.Parent.Parent.StatBox
-	
+
 	local Players = game:GetService("Players")
-	
-	while wait(0.5) do
+
+	while true do
+		task.wait(0.25)
 		for i,v in pairs(Players:GetChildren()) do
 			if Tb.Text == v.Name and v.PlayerData.Stats then
 				t.Text = tostring(v.PlayerData.Stats.SkillPoints.Value)
@@ -6404,12 +6892,13 @@ local function GYXW_fake_script() -- VehicleF.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.VehicleF)
 
 	local t = script.Parent.VehicleValue
-	
+
 	local Tb = script.Parent.Parent.StatBox
-	
+
 	local Players = game:GetService("Players")
-	
-	while wait(0.5) do
+
+	while true do
+		task.wait(0.25)
 		for i,v in pairs(Players:GetChildren()) do
 			if Tb.Text == v.Name and v.PlayerData.Stats then
 				if v.PlayerData.Stats.Vehicle.Value == "" or v.PlayerData.Stats.Vehicle.Value == " " then
@@ -6426,12 +6915,13 @@ local function VXGFHZM_fake_script() -- QuestF.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.QuestF)
 
 	local t = script.Parent.QuestValue
-	
+
 	local Tb = script.Parent.Parent.StatBox
-	
+
 	local Players = game:GetService("Players")
-	
-	while wait(0.5) do
+
+	while true do
+		task.wait(0.25)
 		for i,v in pairs(Players:GetChildren()) do
 			if Tb.Text == v.Name and v.PlayerData.Quest then
 				if v.PlayerData.Quest.QuestName.Value == "" or v.PlayerData.Quest.Value == " " then
@@ -6484,7 +6974,7 @@ local function HWZS_fake_script() -- HomeButton.Home
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.Name ~= "LowerBar" and v.ClassName ~= "LocalScript" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.Name ~= "LowerBar" and v.ClassName ~= "LocalScript" and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -6515,7 +7005,7 @@ local function LUXHDKK_fake_script() -- MiscButton.Misc
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "LowerBar"and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "LowerBar"and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript"and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -6546,7 +7036,7 @@ local function JEQDNPG_fake_script() -- ToolsButton.Tools
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and  v.Name ~= "LowerBar" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and  v.Name ~= "LowerBar" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -6577,7 +7067,7 @@ local function URTVC_fake_script() -- OthersButton.Others
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and  v.Name ~= "LowerBar" and v.ClassName ~= "LocalScript" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and  v.Name ~= "LowerBar" and v.ClassName ~= "LocalScript" and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -6608,7 +7098,7 @@ local function JEGJ_fake_script() -- StatsButton.Stats
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and  v.Name ~= "LowerBar" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and  v.Name ~= "LowerBar" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -6639,7 +7129,7 @@ local function IJZSAI_fake_script() -- TeleportButton.Teleport
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and  v.Name ~= "LowerBar" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and  v.Name ~= "LowerBar" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -6670,7 +7160,7 @@ local function FYAPGG_fake_script() -- SettingsButton.Settings
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and  v.Name ~= "LowerBar" and v.ClassName ~= "LocalScript" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and  v.Name ~= "LowerBar" and v.ClassName ~= "LocalScript" and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -6746,8 +7236,8 @@ coroutine.wrap(ZSGHSPP_fake_script)()
 local function QKQYK_fake_script() -- SpiritOasisBtn.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui.SpiritOasisBtn)
 	script.Parent.MouseButton1Click:Connect(function()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9387, 86, 810)
-end)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9387, 86, 810)
+	end)
 end
 coroutine.wrap(QKQYK_fake_script)()
 local function AIACY_fake_script() -- SwampBtn.LocalScript 
@@ -6770,6 +7260,32 @@ local function TYJPXP_fake_script() -- ScreenGui.ElementBtn.ElementScript
 	end)
 end
 coroutine.wrap(TYJPXP_fake_script)()
+
+local function XQSHHDQ_fake_script() -- QuitLotus.QuitLotus 
+	local script = Instance.new('LocalScript', ScreenGui.QuitLotus)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local args = {
+			[1] = "Lotus",
+			[2] = {
+				["Entering"] = false
+			}
+		}
+	
+		game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
+	end)
+end
+coroutine.wrap(XQSHHDQ_fake_script)()
+local function PLMOH_fake_script() -- CombatBtn.CombatScript 
+	local script = Instance.new('LocalScript', ScreenGui.CombatBtn)
+
+	script.Parent.MouseButton1Click:Connect(function()
+			script.Parent.Parent.Visible = false
+			script.Parent.Parent.Parent.CombatF.Visible = true
+	end)
+end
+coroutine.wrap(PLMOH_fake_script)()
+
 local function CWUFV_fake_script() -- ScreenGui.ShopBtn.ShopScript 
 	local script = Instance.new('LocalScript', ScreenGui.ShopBtn)
 
@@ -6779,6 +7295,726 @@ local function CWUFV_fake_script() -- ScreenGui.ShopBtn.ShopScript
 	end)
 end
 coroutine.wrap(CWUFV_fake_script)()
+
+
+local function BOCXGP_fake_script() -- AimBtn.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.AimBtn)
+
+	local player = game:GetService("Players").LocalPlayer
+	local character = player.Character
+	local mouse = player:GetMouse()
+	local camera = game:GetService("Workspace").CurrentCamera
+	local distance = math.huge
+	local target = nil
+	local runService = game:GetService("RunService")
+	local toggled = false
+	local debounce = false
+	local Circle = script.Parent.Parent.Parent.AimCircle
+	local On = script.Parent.Parent.Parent.AimOn
+	local Off = script.Parent.Parent.Parent.AimOff
+	
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if toggled then -- Meaning its already on
+			Off.Visible = true
+			On.Visible = false
+			debounce = true
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0, 0,0, 0)}):Play()
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+			task.wait(0.25)
+			debounce = false
+			toggled = false
+	
+		elseif toggled == false then -- Meaning its already off
+			On.Visible = true
+			Off.Visible = false
+			debounce = true
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0.532, 0, 0.033, 0)}):Play()
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(0, 255, 0)}):Play()
+			task.wait(0.25)
+			debounce = false
+			toggled = true
+		end
+		function getClosestPlayer()
+			for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+				if v ~= player then
+					if v.Character and v.Character.Humanoid.Health > 0 and v.Character:FindFirstChild("HumanoidRootPart") then
+						local mag = (v.Character.Head.Position - character.Head.Position).Magnitude 
+						if mag < distance then
+							distance = mag
+							target = v
+						end
+					end
+				end
+			end
+			return target
+		end
+	end)
+	runService.RenderStepped:Connect(function()
+		if toggled then
+			camera.CFrame = CFrame.new(camera.CFrame.Position,getClosestPlayer().Character.HumanoidRootPart.Position)
+		end
+	end)
+end
+coroutine.wrap(BOCXGP_fake_script)()
+local function URBX_fake_script() -- Purple.PurpleScript 
+	local script = Instance.new('LocalScript', ScreenGui.Purple)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		for i ,v in pairs(game.Players:GetPlayers()) do
+			if v.Character and v.Character.HumanoidRootPart and v.Character.Name ~= game.Players.LocalPlayer.Character.Name then
+				v.Character.HumanoidRootPart.Color = Color3.fromRGB(120, 81, 169)
+			end
+		end
+	end)
+end
+coroutine.wrap(URBX_fake_script)()
+local function UEMPM_fake_script() -- White.WhiteScript 
+	local script = Instance.new('LocalScript', ScreenGui.White)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		for i ,v in pairs(game.Players:GetPlayers()) do
+			if v.Character and v.Character.HumanoidRootPart and v.Character.Name ~= game.Players.LocalPlayer.Character.Name then
+				v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+			end
+		end
+	end)
+end
+coroutine.wrap(UEMPM_fake_script)()
+local function YHENNO_fake_script() -- Green.GreenScript 
+	local script = Instance.new('LocalScript', ScreenGui.Green)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		for i ,v in pairs(game.Players:GetPlayers()) do
+			if v.Character and v.Character.HumanoidRootPart and v.Character.Name ~= game.Players.LocalPlayer.Character.Name then
+				v.Character.HumanoidRootPart.Color = Color3.fromRGB(21, 148, 91)
+			end
+		end
+	end)
+end
+coroutine.wrap(YHENNO_fake_script)()
+local function KKGHNO_fake_script() -- Red.RedScript 
+	local script = Instance.new('LocalScript', ScreenGui.Red)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		for i ,v in pairs(game.Players:GetPlayers()) do
+			if v.Character and v.Character.HumanoidRootPart and v.Character.Name ~= game.Players.LocalPlayer.Character.Name then
+				v.Character.HumanoidRootPart.Color = Color3.fromRGB(200, 22, 39)
+			end
+		end
+	end)
+end
+coroutine.wrap(KKGHNO_fake_script)()
+local function XBKPAL_fake_script() -- Blue.BlueScript 
+	local script = Instance.new('LocalScript', ScreenGui.Blue)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		for i ,v in pairs(game.Players:GetPlayers()) do
+			if v.Character and v.Character.HumanoidRootPart and v.Character.Name ~= game.Players.LocalPlayer.Character.Name then
+				v.Character.HumanoidRootPart.Color = Color3.fromRGB(65, 160, 186)
+			end
+		end
+	end)
+end
+coroutine.wrap(XBKPAL_fake_script)()
+local function PCTW_fake_script() -- DropBtn.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.DropBtn)
+
+	local dropped = false
+	local waitTime = 0.10
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if dropped == false then
+			script.Parent.Parent:TweenSize(UDim2.new(0, 363,0, 125), nil,nil,waitTime)
+			wait(waitTime)
+			game.TweenService:Create(script.Parent.Parent.Frame, TweenInfo.new(waitTime), {
+				Visible = true
+			}):Play()
+			script.Parent.ImageRectOffset = Vector2.new(0, 450)
+			script.Parent.ImageRectSize = Vector2.new(50, 50)
+			dropped = true
+		elseif dropped then
+			game.TweenService:Create(script.Parent.Parent.Frame, TweenInfo.new(waitTime), {
+				Visible = false
+			}):Play()
+			script.Parent.Parent:TweenSize(UDim2.new(0, 363,0, 34),nil,nil,waitTime)
+			wait(0.25)
+			script.Parent.ImageRectOffset = Vector2.new(0, 600)
+			script.Parent.ImageRectSize = Vector2.new(50, 50)
+			dropped = false
+		end
+	end)
+end
+coroutine.wrap(PCTW_fake_script)()
+local function ZBJPHDL_fake_script() -- SliderBtn.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.SliderBtn)
+
+	minvalue =  0
+	maxvalue = 200
+	
+	-----Variables-----
+	local mouse = game.Players.LocalPlayer:GetMouse()
+	local uis = game:GetService("UserInputService")
+	local Value;
+	local btn = script.Parent
+	local frame = script.Parent.SliderBtn_Roundify_12px.SliderInner
+	local t = script.Parent.Parent.SliderCurrent
+	
+	
+	
+	
+	-----Main Code-----
+	
+	btn.MouseButton1Down:Connect(function()
+		Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 245) * frame .AbsoluteSize.X) + tonumber(minvalue)) or 0
+		pcall(function()
+			for i ,v in pairs (game.Players:GetPlayers()) do
+				if v.Name ~= game.Players.LocalPlayer.Name then
+					v.Character.HumanoidRootPart.CanCollide = false
+					v.Character.HumanoidRootPart.Size = Vector3.new(Value,Value,Value+1)
+				end
+			end
+		end)
+		frame .Size = UDim2.new(0, math.clamp(mouse.X - frame .AbsolutePosition.X, 0, 245), 0, 13)
+		moveconnection = mouse.Move:Connect(function()
+			t.Text = Value
+			Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 245) * frame .AbsoluteSize.X) + tonumber(minvalue))
+	
+	
+			pcall(function()
+				for i ,v in pairs (game.Players:GetPlayers()) do
+					if v.Name ~= game.Players.LocalPlayer.Name then
+						v.Character.HumanoidRootPart.CanCollide = false
+						v.Character.HumanoidRootPart.Size = Vector3.new(Value,Value,Value+1)
+					end
+				end
+			end)
+			frame .Size = UDim2.new(0, math.clamp(mouse.X - frame .AbsolutePosition.X, 0, 245), 0, 13)
+		end)
+		releaseconnection = uis.InputEnded:Connect(function(Mouse)
+			if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
+				Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) /245) * frame .AbsoluteSize.X) + tonumber(minvalue))
+				pcall(function()
+					for i ,v in pairs (game.Players:GetPlayers()) do
+						if v.Name ~= game.Players.LocalPlayer.Name then
+							v.Character.HumanoidRootPart.CanCollide = false
+							v.Character.HumanoidRootPart.Size = Vector3.new(Value,Value,Value+1)
+						end
+					end
+				end)
+				frame.Size = UDim2.new(0, math.clamp(mouse.X - frame .AbsolutePosition.X, 0, 245), 0, 13)
+				moveconnection:Disconnect()
+				releaseconnection:Disconnect()
+			end
+		end)
+	end)
+	
+end
+coroutine.wrap(ZBJPHDL_fake_script)()
+local function HOUDYF_fake_script() -- TextBox.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.TextBox)
+
+	script.Parent.FocusLost:Connect(function()
+		for i ,v in pairs (game.Players:GetChildren()) do
+			if v.Character and v.Character.HumanoidRootPart and v.Name ~= game.Players.LocalPlayer.Name then
+				v.Character.HumanoidRootPart.Transparency = script.Parent.Text
+			end
+		end
+	end)
+end
+coroutine.wrap(HOUDYF_fake_script)()
+local function EBUB_fake_script() -- LineESPBtn.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.LineESPBtn)
+
+	local players = game:GetService("Players")
+	local player = game:GetService("Players").LocalPlayer
+	local character = player.Character
+	local mouse = player:GetMouse()
+	local camera = game:GetService("Workspace").CurrentCamera
+	local distance = math.huge
+	local target = nil
+	local runService = game:GetService("RunService")
+	local toggled = false
+	local debounce = false
+	local Circle = script.Parent.Parent.Parent.LineCircle
+	local On = script.Parent.Parent.Parent.LineOn
+	local Off = script.Parent.Parent.Parent.LineOff
+	
+	
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if toggled then -- Meaning its already on
+			Off.Visible = true
+			On.Visible = false
+			debounce = true
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0, 0,0, 0)}):Play()
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+			task.wait(0.25)
+			debounce = false
+			toggled = false
+	
+		elseif toggled == false then -- Meaning its already off
+			On.Visible = true
+			Off.Visible = false
+			debounce = true
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0.532, 0, 0.033, 0)}):Play()
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(0, 255, 0)}):Play()
+			task.wait(0.25)
+			debounce = false
+			toggled = true
+		end
+		for _,v in pairs(players:GetPlayers()) do
+			if (v ~= player and v.Character and v.Character:FindFirstChild("HumanoidRootPart") ~= nil) then
+				local vector,onScreen = camera:WorldToScreenPoint(v.Character.PrimaryPart.Position)
+				local line = Drawing.new("Line")
+				line.Visible = true;
+				line.From = Vector2.new(camera.ViewportSize.X / 2 , camera.ViewportSize.Y)
+				line.To = Vector2.new(vector.X, vector.Y);
+				line.Color = Color3.fromRGB(255,255,255)
+				line.Thickness = 2
+				line.Transparency = 1
+	
+				function refresh()
+					runService.RenderStepped:Connect(function()
+						if (v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil) then
+							local vector,onScreen = camera:WorldToScreenPoint(v.Character.PrimaryPart.Position);
+							if onScreen and toggled then
+								line.To = Vector2.new(vector.X,vector.Y)
+								line.Visible = true
+							else
+								line.Visible = false
+							end
+						end
+					end)
+				end
+	
+				coroutine.wrap(refresh)()
+	
+			end
+	
+			v.CharacterAdded:Connect(function()
+				repeat wait() until v.Character:FindFirstChild("HumanoidRootPart") ~= nil
+				local vector,onScreen = camera:WorldToScreenPoint(v.Character.PrimaryPart.Position)
+				local line = Drawing.new("Line")
+				line.Visible = true;
+				line.From = Vector2.new(camera.ViewportSize.X / 2 , camera.ViewportSize.Y)
+				line.To = Vector2.new(vector.X, vector.Y);
+				line.Color = Color3.fromRGB(255,255,255)
+				line.Thickness = 2
+				line.Transparency = 1
+	
+				function refresh()
+					runService.RenderStepped:Connect(function()
+						if (v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil) then
+							local vector,onScreen = camera:WorldToScreenPoint(v.Character.PrimaryPart.Position);
+							if onScreen and toggled then
+								line.To = Vector2.new(vector.X,vector.Y)
+								line.Visible = true
+							else
+								line.Visible = false
+							end
+						end
+					end)
+				end
+	
+				coroutine.wrap(refresh)()
+			end)
+		end
+	
+		players.PlayerAdded:Connect(function(v)
+			for _,v in pairs(players:GetPlayers()) do
+				if (v ~= player and v.Character and v.Character:FindFirstChild("HumanoidRootPart") ~= nil) then
+					local vector,onScreen = camera:WorldToScreenPoint(v.Character.PrimaryPart.Position)
+					local line = Drawing.new("Line")
+					line.Visible = true;
+					line.From = Vector2.new(camera.ViewportSize.X / 2 , camera.ViewportSize.Y)
+					line.To = Vector2.new(vector.X, vector.Y);
+					line.Color = Color3.fromRGB(255,255,255)
+					line.Thickness = 1
+					line.Transparency = 1
+	
+					function refresh()
+						runService.RenderStepped:Connect(function()
+							if (v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil) then
+								local vector,onScreen = camera:WorldToScreenPoint(v.Character.PrimaryPart.Position);
+								if onScreen and toggled then
+									line.To = Vector2.new(vector.X,vector.Y)
+									line.Visible = true
+								else
+									line.Visible = false
+								end
+							end
+						end)
+					end
+	
+					coroutine.wrap(refresh)()
+	
+				end
+	
+				v.CharacterAdded:Connect(function()
+					repeat wait() until v.Character:FindFirstChild("HumanoidRootPart") ~= nil
+					local vector,onScreen = camera:WorldToScreenPoint(v.Character.PrimaryPart.Position)
+					local line = Drawing.new("Line")
+					line.Visible = true;
+					line.From = Vector2.new(camera.ViewportSize.X / 2 , camera.ViewportSize.Y)
+					line.To = Vector2.new(vector.X, vector.Y);
+					line.Color = Color3.fromRGB(255,255,255)
+					line.Thickness = 2
+					line.Transparency = 1
+	
+					function refresh()
+						runService.RenderStepped:Connect(function()
+							if (v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil) then
+								local vector,onScreen = camera:WorldToScreenPoint(v.Character.PrimaryPart.Position);
+								if onScreen and toggled then
+									line.To = Vector2.new(vector.X,vector.Y)
+									line.Visible = true
+								else
+									line.Visible = false
+								end
+							end
+						end)
+					end
+	
+					coroutine.wrap(refresh)()
+				end)
+			end
+	
+		end)
+	end)
+	
+	
+	
+end
+coroutine.wrap(EBUB_fake_script)()
+local function GNQPTO_fake_script() -- BoxBtn.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.BoxBtn)
+
+	local lplr = game.Players.LocalPlayer
+	local camera = game:GetService("Workspace").CurrentCamera
+	local CurrentCamera = workspace.CurrentCamera
+	local worldToViewportPoint = CurrentCamera.worldToViewportPoint
+	local HeadOff = Vector3.new(0, 0.5, 0)
+	local LegOff = Vector3.new(0,3,0)
+	local runService = game:GetService("RunService")
+	local toggled = false
+	local debounce = false
+	local Circle = script.Parent.Parent.Parent.BoxCircle
+	local On = script.Parent.Parent.Parent.BoxOn
+	local Off = script.Parent.Parent.Parent.BoxOff
+	
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if toggled then -- Meaning its already on
+			Off.Visible = true
+			On.Visible = false
+			debounce = true
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0, 0,0, 0)}):Play()
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+			task.wait(0.25)
+			debounce = false
+			toggled = false
+	
+		elseif toggled == false then -- Meaning its already off
+			On.Visible = true
+			Off.Visible = false
+			debounce = true
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0.532, 0, 0.033, 0)}):Play()
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(0, 255, 0)}):Play()
+			task.wait(0.25)
+			debounce = false
+			toggled = true
+		end
+		for i,v in pairs(game.Players:GetChildren()) do
+			local BoxOutline = Drawing.new("Square")
+			BoxOutline.Visible = false
+			BoxOutline.Color = Color3.new(0,0,0)
+			BoxOutline.Thickness = 3
+			BoxOutline.Transparency = 1
+			BoxOutline.Filled = false
+	
+			local Box = Drawing.new("Square")
+			Box.Visible = false
+			Box.Color = Color3.new(1,1,1)
+			Box.Thickness = 1
+			Box.Transparency = 1
+			Box.Filled = false
+	
+			function boxesp()
+				game:GetService("RunService").RenderStepped:Connect(function()
+					if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 then
+						local Vector, onScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
+	
+						local RootPart = v.Character.HumanoidRootPart
+						local Head = v.Character.Head
+						local RootPosition, RootVis = worldToViewportPoint(CurrentCamera, RootPart.Position)
+						local HeadPosition = worldToViewportPoint(CurrentCamera, Head.Position + HeadOff)
+						local LegPosition = worldToViewportPoint(CurrentCamera, RootPart.Position - LegOff)
+	
+						if onScreen and toggled then
+							BoxOutline.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+							BoxOutline.Position = Vector2.new(RootPosition.X - BoxOutline.Size.X / 2, RootPosition.Y - BoxOutline.Size.Y / 2)
+							BoxOutline.Visible = true
+	
+							Box.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+							Box.Position = Vector2.new(RootPosition.X - Box.Size.X / 2, RootPosition.Y - Box.Size.Y / 2)
+							Box.Visible = true
+	
+						else
+							BoxOutline.Visible = false
+							Box.Visible = false
+						end
+					else
+						BoxOutline.Visible = false
+						Box.Visible = false
+					end
+				end)
+			end
+			coroutine.wrap(boxesp)()
+		end
+	
+		game.Players.PlayerAdded:Connect(function(v)
+			local BoxOutline = Drawing.new("Square")
+			BoxOutline.Visible = false
+			BoxOutline.Color = Color3.new(0,0,0)
+			BoxOutline.Thickness = 3
+			BoxOutline.Transparency = 1
+			BoxOutline.Filled = false
+	
+			local Box = Drawing.new("Square")
+			Box.Visible = false
+			Box.Color = Color3.new(1,1,1)
+			Box.Thickness = 1
+			Box.Transparency = 1
+			Box.Filled = false
+	
+			function boxesp()
+				game:GetService("RunService").RenderStepped:Connect(function()
+					if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 then
+						local Vector, onScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
+	
+						local RootPart = v.Character.HumanoidRootPart
+						local Head = v.Character.Head
+						local RootPosition, RootVis = worldToViewportPoint(CurrentCamera, RootPart.Position)
+						local HeadPosition = worldToViewportPoint(CurrentCamera, Head.Position + HeadOff)
+						local LegPosition = worldToViewportPoint(CurrentCamera, RootPart.Position - LegOff)
+	
+						if onScreen and toggled then
+							BoxOutline.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+							BoxOutline.Position = Vector2.new(RootPosition.X - BoxOutline.Size.X / 2, RootPosition.Y - BoxOutline.Size.Y / 2)
+							BoxOutline.Visible = true
+	
+							Box.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+							Box.Position = Vector2.new(RootPosition.X - Box.Size.X / 2, RootPosition.Y - Box.Size.Y / 2)
+							Box.Visible = true
+	
+						else
+							BoxOutline.Visible = false
+							Box.Visible = false
+						end
+					else
+						BoxOutline.Visible = false
+						Box.Visible = false
+					end
+				end)
+			end
+			coroutine.wrap(boxesp)()
+		end)
+	end)
+	
+end
+coroutine.wrap(GNQPTO_fake_script)()
+local function XKOL_fake_script() -- HealthBtn.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.HealthBtn)
+
+	local lplr = game.Players.LocalPlayer
+	local camera = game:GetService("Workspace").CurrentCamera
+	local CurrentCamera = workspace.CurrentCamera
+	local worldToViewportPoint = CurrentCamera.worldToViewportPoint
+	local HeadOff = Vector3.new(0, 0.5, 0)
+	local LegOff = Vector3.new(0,3,0)
+	local runService = game:GetService("RunService")
+	local toggled = false
+	local debounce = false
+	local Circle = script.Parent.Parent.Parent.HealthCircle
+	local On = script.Parent.Parent.Parent.HealthOn
+	local Off = script.Parent.Parent.Parent.HealthOff
+	
+	
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if toggled then -- Meaning its already on
+			Off.Visible = true
+			On.Visible = false
+			debounce = true
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0, 0,0, 0)}):Play()
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+			task.wait(0.25)
+			debounce = false
+			toggled = false
+	
+		elseif toggled == false then -- Meaning its already off
+			On.Visible = true
+			Off.Visible = false
+			debounce = true
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0.532, 0, 0.033, 0)}):Play()
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(0, 255, 0)}):Play()
+			task.wait(0.25)
+			debounce = false
+			toggled = true
+		end
+		for i,v in pairs(game.Players:GetChildren()) do
+			local BoxOutline = Drawing.new("Square")
+			BoxOutline.Visible = false
+			BoxOutline.Color = Color3.new(0,0,0)
+			BoxOutline.Thickness = 3
+			BoxOutline.Transparency = 1
+			BoxOutline.Filled = false
+	
+			local Box = Drawing.new("Square")
+			Box.Visible = false
+			Box.Color = Color3.new(1,1,1)
+			Box.Thickness = 1
+			Box.Transparency = 1
+			Box.Filled = false
+	
+			local HealthBarOutline = Drawing.new("Square")
+			HealthBarOutline.Thickness = 3
+			HealthBarOutline.Filled = false
+			HealthBarOutline.Color = Color3.new(0,0,0)
+			HealthBarOutline.Transparency = 1
+			HealthBarOutline.Visible = false
+	
+			local HealthBar = Drawing.new("Square")
+			HealthBar.Thickness = 1
+			HealthBar.Filled = false
+			HealthBar.Transparency = 1
+			HealthBar.Visible = false
+	
+			function boxesp()
+				game:GetService("RunService").RenderStepped:Connect(function()
+					if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 and v.Character.Head ~= nil then
+						local Vector, onScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
+	
+						local RootPart = v.Character.HumanoidRootPart
+						local Head = v.Character.Head
+						local RootPosition, RootVis = worldToViewportPoint(CurrentCamera, RootPart.Position)
+						local HeadPosition = worldToViewportPoint(CurrentCamera, Head.Position + HeadOff)
+						local LegPosition = worldToViewportPoint(CurrentCamera, RootPart.Position - LegOff)
+	
+						if  onScreen and toggled then
+							BoxOutline.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+							BoxOutline.Position = Vector2.new(RootPosition.X - BoxOutline.Size.X / 2, RootPosition.Y - BoxOutline.Size.Y / 2)
+							BoxOutline.Visible = true
+	
+							Box.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+							Box.Position = Vector2.new(RootPosition.X - Box.Size.X / 2, RootPosition.Y - Box.Size.Y / 2)
+							Box.Visible = true
+	
+							HealthBarOutline.Size = Vector2.new(2, HeadPosition.Y - LegPosition.Y)
+							HealthBarOutline.Position = BoxOutline.Position - Vector2.new(6,0)
+							HealthBarOutline.Visible = true
+	
+							HealthBar.Size = Vector2.new(2, (HeadPosition.Y - LegPosition.Y) / (game:GetService("Players")[v.Name].Character.Humanoid.Health / math.clamp(game:GetService("Players")[v.Name].Character.Humanoid.Health, 0, game:GetService("Players")[v.Name].Character.Humanoid.Health)))
+							HealthBar.Position = Vector2.new(Box.Position.X - 6, Box.Position.Y + (1/HealthBar.Size.Y))
+							HealthBar.Color = Color3.fromRGB(255 - 255 / (game:GetService("Players")[v.Name].Character.Humanoid.Health / game:GetService("Players")[v.Name].Character.Humanoid.Health), 255 / (game:GetService("Players")[v.Name].Character.Humanoid.Health /game:GetService("Players")[v.Name].Character.Humanoid.Health), 0)                    
+							HealthBar.Visible = true
+	
+						else
+							BoxOutline.Visible = false
+							Box.Visible = false
+							HealthBarOutline.Visible = false
+							HealthBar.Visible = false
+						end
+					else
+						BoxOutline.Visible = false
+						Box.Visible = false
+						HealthBarOutline.Visible = false
+						HealthBar.Visible = false
+					end
+				end)
+			end
+			coroutine.wrap(boxesp)()
+		end
+	
+		game.Players.PlayerAdded:Connect(function(v)
+			local BoxOutline = Drawing.new("Square")
+			BoxOutline.Visible = false
+			BoxOutline.Color = Color3.new(0,0,0)
+			BoxOutline.Thickness = 3
+			BoxOutline.Transparency = 1
+			BoxOutline.Filled = false
+	
+			local Box = Drawing.new("Square")
+			Box.Visible = false
+			Box.Color = Color3.new(1,1,1)
+			Box.Thickness = 1
+			Box.Transparency = 1
+			Box.Filled = false
+	
+			local HealthBarOutline = Drawing.new("Square")
+			HealthBarOutline.Thickness = 3
+			HealthBarOutline.Filled = false
+			HealthBarOutline.Color = Color3.new(0,0,0)
+			HealthBarOutline.Transparency = 1
+			HealthBarOutline.Visible = false
+	
+			local HealthBar = Drawing.new("Square")
+			HealthBar.Thickness = 1
+			HealthBar.Filled = false
+			HealthBar.Transparency = 1
+			HealthBar.Visible = false
+	
+			function boxesp()
+				game:GetService("RunService").RenderStepped:Connect(function()
+					if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 and v.Character.Head ~= nil then
+						local Vector, onScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
+	
+						local RootPart = v.Character.HumanoidRootPart
+						local Head = v.Character.Head
+						local RootPosition, RootVis = worldToViewportPoint(CurrentCamera, RootPart.Position)
+						local HeadPosition = worldToViewportPoint(CurrentCamera, Head.Position + HeadOff)
+						local LegPosition = worldToViewportPoint(CurrentCamera, RootPart.Position - LegOff)
+	
+						if  onScreen and toggled then
+							BoxOutline.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+							BoxOutline.Position = Vector2.new(RootPosition.X - BoxOutline.Size.X / 2, RootPosition.Y - BoxOutline.Size.Y / 2)
+							BoxOutline.Visible = true
+	
+							Box.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+							Box.Position = Vector2.new(RootPosition.X - Box.Size.X / 2, RootPosition.Y - Box.Size.Y / 2)
+							Box.Visible = true
+	
+							HealthBarOutline.Size = Vector2.new(2, HeadPosition.Y - LegPosition.Y)
+							HealthBarOutline.Position = BoxOutline.Position - Vector2.new(6,0)
+							HealthBarOutline.Visible = true
+	
+							HealthBar.Size = Vector2.new(2, (HeadPosition.Y - LegPosition.Y) / (game:GetService("Players")[v.Name].Character.Humanoid.Health / math.clamp(game:GetService("Players")[v.Name].Character.Humanoid.Health, 0, game:GetService("Players")[v.Name].Character.Humanoid.Health)))
+							HealthBar.Position = Vector2.new(Box.Position.X - 6, Box.Position.Y + (1/HealthBar.Size.Y))
+							HealthBar.Color = Color3.fromRGB(255 - 255 / (game:GetService("Players")[v.Name].Character.Humanoid.Health / game:GetService("Players")[v.Name].Character.Humanoid.Health), 255 / (game:GetService("Players")[v.Name].Character.Humanoid.Health /game:GetService("Players")[v.Name].Character.Humanoid.Health), 0)                    
+							HealthBar.Visible = true
+	
+						else
+							BoxOutline.Visible = false
+							Box.Visible = false
+							HealthBarOutline.Visible = false
+							HealthBar.Visible = false
+						end
+					else
+						BoxOutline.Visible = false
+						Box.Visible = false
+						HealthBarOutline.Visible = false
+						HealthBar.Visible = false
+					end
+				end)
+			end
+			coroutine.wrap(boxesp)()
+		end)
+	end)
+	
+end
+coroutine.wrap(XKOL_fake_script)()
+
 
 local function UVIFXN_fake_script() -- Gui.ArrowLeft.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui.ArrowLeft)
@@ -7297,7 +8533,7 @@ end
 coroutine.wrap(RWVZID_fake_script)()
 local function XZAAHKB_fake_script() -- Gui.HelmetBtn.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui.HelmetBtn)
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		local args = {
 			[1] = "Buy",
@@ -7803,10 +9039,10 @@ local function CLEESC_fake_script() -- ScreenGui.HomeButton.Home
 	local Main = script.Parent.Parent.Parent
 	local Tabs = script.Parent.Parent
 	local Text = Main.BottomFrame.BFrameText
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "LowerBar" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "LowerBar" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -7821,8 +9057,8 @@ local function CLEESC_fake_script() -- ScreenGui.HomeButton.Home
 			end
 		end
 	end)
-	
-	
+
+
 end
 coroutine.wrap(CLEESC_fake_script)()
 local function TGNO_fake_script() -- ScreenGui.ToolsButton.Tools 
@@ -7834,26 +9070,27 @@ local function TGNO_fake_script() -- ScreenGui.ToolsButton.Tools
 	local Main = script.Parent.Parent.Parent
 	local Tabs = script.Parent.Parent
 	local Text = Main.BottomFrame.BFrameText
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" then
-						v.Visible = false
-				elseif v.Name == HomeF.Name then
-						HomeF.Visible = true
-							Text.Text = "Quests"
-				end
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" and v.Name ~="TeaHubImage" then
+				v.Visible = false
+			elseif v.Name == HomeF.Name then
+				HomeF.Visible = true
+				Text.Text = "Quests"
 			end
-			for i ,v in pairs(Tabs:GetChildren()) do
+		end
+		for i ,v in pairs(Tabs:GetChildren()) do
+			if v.Name == HomeB.Name  and v.ClassName ~= "Frame" and v.ClassName ~= "TextLabel" and v.Name ~= "ExitFrame" and v.Name ~= "TitleFrame" and v.ClassName ~= "UIListLayout" and v.ClassName ~= "UIPadding"then
+				TS:Create(HomeB,TweenInfo.new(0.5),{BackgroundColor3 = Color3.fromRGB(193, 193, 193)}):Play()
+			end
 			if v.Name ~= HomeB.Name and v.ClassName ~= "Frame" and v.ClassName ~= "TextLabel" and v.Name ~= "ExitFrame" and v.Name ~= "TitleFrame" and v.ClassName ~= "UIListLayout" and v.ClassName ~= "UIPadding" then
-			elseif v.Name == HomeB.Name  and v.ClassName ~= "Frame" and v.ClassName ~= "TextLabel" and v.Name ~= "ExitFrame" and v.Name ~= "TitleFrame" and v.ClassName ~= "UIListLayout" and v.ClassName ~= "UIPadding"then
-						TS:Create(HomeB,TweenInfo.new(0.5),{BackgroundColor3 = Color3.fromRGB(193, 193, 193)}):Play()
-				end
-						TS:Create(v,TweenInfo.new(0.5),{BackgroundColor3 = Color3.fromRGB(49, 49, 49)}):Play()
+				TS:Create(v,TweenInfo.new(0.5),{BackgroundColor3 = Color3.fromRGB(49, 49, 49)}):Play()
 			end
+		end
 	end)
-	
-	
+
+
 end
 coroutine.wrap(TGNO_fake_script)()
 local function UYORFRW_fake_script() -- ScreenGui.OthersButton.Others 
@@ -7865,10 +9102,10 @@ local function UYORFRW_fake_script() -- ScreenGui.OthersButton.Others
 	local Main = script.Parent.Parent.Parent
 	local Tabs = script.Parent.Parent
 	local Text = Main.BottomFrame.BFrameText
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -7883,8 +9120,8 @@ local function UYORFRW_fake_script() -- ScreenGui.OthersButton.Others
 			end
 		end
 	end)
-	
-	
+
+
 end
 coroutine.wrap(UYORFRW_fake_script)()
 local function XIJRP_fake_script() -- ScreenGui.MiscButton.Misc 
@@ -7896,10 +9133,10 @@ local function XIJRP_fake_script() -- ScreenGui.MiscButton.Misc
 	local Main = script.Parent.Parent.Parent
 	local Tabs = script.Parent.Parent
 	local Text = Main.BottomFrame.BFrameText
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -7914,8 +9151,8 @@ local function XIJRP_fake_script() -- ScreenGui.MiscButton.Misc
 			end
 		end
 	end)
-	
-	
+
+
 end
 coroutine.wrap(XIJRP_fake_script)()
 local function KGEHFOO_fake_script() -- ScreenGui.TeleportButton.Teleport 
@@ -7927,10 +9164,10 @@ local function KGEHFOO_fake_script() -- ScreenGui.TeleportButton.Teleport
 	local Main = script.Parent.Parent.Parent
 	local Tabs = script.Parent.Parent
 	local Text = Main.BottomFrame.BFrameText
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name and v.ClassName ~= "Frame" and v.ClassName ~= "TextLabel" and v.Name ~= "ExitFrame" and v.Name ~= "TitleFrame" and v.ClassName ~= "UIListLayout" and v.ClassName ~= "UIPadding" then
 				HomeF.Visible = true
@@ -7945,8 +9182,8 @@ local function KGEHFOO_fake_script() -- ScreenGui.TeleportButton.Teleport
 			end
 		end
 	end)
-	
-	
+
+
 end
 coroutine.wrap(KGEHFOO_fake_script)()
 local function MVLSG_fake_script() -- ScreenGui.StatsButton.Stats 
@@ -7958,10 +9195,10 @@ local function MVLSG_fake_script() -- ScreenGui.StatsButton.Stats
 	local Main = script.Parent.Parent.Parent
 	local Tabs = script.Parent.Parent
 	local Text = Main.BottomFrame.BFrameText
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar"and v.Name ~="TeaHubImage" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -7976,8 +9213,8 @@ local function MVLSG_fake_script() -- ScreenGui.StatsButton.Stats
 			end
 		end
 	end)
-	
-	
+
+
 end
 coroutine.wrap(MVLSG_fake_script)()
 local function GKVUEE_fake_script() -- ScreenGui.SettingsButton.Settings 
@@ -7989,11 +9226,10 @@ local function GKVUEE_fake_script() -- ScreenGui.SettingsButton.Settings
 	local Main = script.Parent.Parent.Parent
 	local Tabs = script.Parent.Parent
 	local Text = Main.BottomFrame.BFrameText
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		for i ,v in pairs(Main:GetChildren()) do
-			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" and
-				v.Name ~= "LowerBar" then
+			if v.Name ~= HomeF.Name and v.Name ~= "Tabs" and v.Name ~= "BottomFrame" and v.Name ~= "TopBar" and v.ClassName ~= "LocalScript" and v.Name ~= "LowerBar" and v.Name ~="TeaHubImage" and v.Name ~= "LowerBar" then
 				v.Visible = false
 			elseif v.Name == HomeF.Name then
 				HomeF.Visible = true
@@ -8008,8 +9244,8 @@ local function GKVUEE_fake_script() -- ScreenGui.SettingsButton.Settings
 			end
 		end
 	end)
-	
-	
+
+
 end
 coroutine.wrap(GKVUEE_fake_script)()
 local function OQKEP_fake_script() -- ScreenGui.WaterBtn.LocalScript 
@@ -8094,18 +9330,18 @@ local function YMYPY_fake_script() -- ScreenGui.DeliverBoxBtn.LocalScript
 	local waterGuy = game:GetService("Workspace").QuestNPCs.WaterNPC1[""]
 	local airGuy = game:GetService("Workspace").QuestNPCs.AirNPC1[""]
 	local Players = game:GetService("Players")
-	
+
 	local Player = Players.LocalPlayer
-	
+
 	local Character = Player.Character
-	
+
 	local Humanoid = Character.Humanoid
-	
+
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
 	local first;
 	local second;
-	local firstCFrame = Character.HumanoidRootPart.CFrame
 	local function DeliverBox()
+		local firstCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		for i = 0,2 do
 			-- Deliver Box Auto Quest -- 
 			if i == 1 then
@@ -8176,43 +9412,43 @@ local function BVQIBGW_fake_script() -- ScreenGui.LostNecklaceBtn.LocalScript
 	local Humanoid = Character.Humanoid
 
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-    local duration = true
-    local firstCFrame = Character.HumanoidRootPart.CFrame
+	local duration = true
 	local function FindNecklace()
+		local firstCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		for i = 0,3 do
 			-- Deliver Box Auto Quest -- 
-                task.spawn(function()
-                    while duration do
-                        Character.HumanoidRootPart.CFrame = CFrame.new(8606, 61, 954) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                        task.wait()
-                    end
-                end)
-				local A_1 = "AdvanceStep"
-				local A_2 = 
-					{
-						["QuestName"] = "WaterQuest4", 
-						["Step"] = i
-					}
-				if Player:DistanceFromCharacter(waterGranny.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
-					break;
+			task.spawn(function()
+				while duration do
+					Character.HumanoidRootPart.CFrame = CFrame.new(8606, 61, 954) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+					task.wait()
 				end
-                if i == 1 then
-				    task.wait(0.5)
-                else
-                    task.wait()
+			end)
+			local A_1 = "AdvanceStep"
+			local A_2 = 
+				{
+					["QuestName"] = "WaterQuest4", 
+					["Step"] = i
+				}
+			if Player:DistanceFromCharacter(waterGranny.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
+				break;
+			end
+			if i == 1 then
+				task.wait(0.5)
+			else
+				task.wait()
 
-                end
-                task.wait()
-				Event:InvokeServer(A_1, A_2)
-                if i == 3 then
-                    duration = false;
-                    local abandon = {
-                        [1] = "Abandon"
-                    }
-                    Event:InvokeServer(unpack(abandon))
-                    Character.HumanoidRootPart.CFrame = firstCFrame
-                    Humanoid:ChangeState("Jumping")
-                end
+			end
+			task.wait()
+			Event:InvokeServer(A_1, A_2)
+			if i == 3 then
+				duration = false;
+				local abandon = {
+					[1] = "Abandon"
+				}
+				Event:InvokeServer(unpack(abandon))
+				Character.HumanoidRootPart.CFrame = firstCFrame
+				Humanoid:ChangeState("Jumping")
+			end
 
 		end
 	end
@@ -8235,20 +9471,20 @@ local function ZDCE_fake_script() -- ScreenGui.LostGrannyBtn.LocalScript
 	local Humanoid = Character.Humanoid
 
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-    local first
-    local second
-    local firstCFrame = Character.HumanoidRootPart.CFrame
+	local first
+	local second
 	local function FindGranny()
+		local firstCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		for i = 0,2 do
 			-- Find Granny Auto Quest -- 
 			if i == 1 then 
-                first = true
-                task.spawn(function()
-                    while first do
-                        Character.HumanoidRootPart.CFrame = CFrame.new(8597, 61, 619) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                        task.wait()
-                    end
-                end)
+				first = true
+				task.spawn(function()
+					while first do
+						Character.HumanoidRootPart.CFrame = CFrame.new(8597, 61, 619) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+						task.wait()
+					end
+				end)
 				local A_1 = "AdvanceStep"
 				local A_2 = 
 					{
@@ -8260,15 +9496,15 @@ local function ZDCE_fake_script() -- ScreenGui.LostGrannyBtn.LocalScript
 				end
 				task.wait(0.5)
 				Event:InvokeServer(A_1, A_2)
-                first = false
+				first = false
 			elseif i == 2 then
-                second = true
-                task.spawn(function()
-                    while second do
-                        Character.HumanoidRootPart.CFrame = CFrame.new(8606, 61, 955) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                        task.wait()
-                    end
-                end)
+				second = true
+				task.spawn(function()
+					while second do
+						Character.HumanoidRootPart.CFrame = CFrame.new(8606, 61, 955) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+						task.wait()
+					end
+				end)
 				local A_1 = "AdvanceStep"
 				local A_2 = 
 					{
@@ -8280,13 +9516,13 @@ local function ZDCE_fake_script() -- ScreenGui.LostGrannyBtn.LocalScript
 				end
 				task.wait(0.5)
 				Event:InvokeServer(A_1, A_2)
-                second = false
-                local abandon = {
-                    [1] = "Abandon"
-                }
-                Event:InvokeServer(unpack(abandon))
-                Character.HumanoidRootPart.CFrame = firstCFrame
-                Humanoid:ChangeState("Jumping")
+				second = false
+				local abandon = {
+					[1] = "Abandon"
+				}
+				Event:InvokeServer(unpack(abandon))
+				Character.HumanoidRootPart.CFrame = firstCFrame
+				Humanoid:ChangeState("Jumping")
 			end
 		end
 	end
@@ -8310,45 +9546,46 @@ local function TOTEIK_fake_script() -- ScreenGui.CatchFishBtn.LocalScript
 
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
 
-    local duration = true;
-    local firstCFrame = Character.HumanoidRootPart.CFrame
+	local duration = true;
+
 	function CatchFish()
+		local firstCFrame = Character.HumanoidRootPart.CFrame
 		for i = 0,6 do
 			-- Catch Fish Auto Quest -- 
-            task.spawn(function()
-                while duration do
-                    Character.HumanoidRootPart.CFrame = CFrame.new(45, 11, 521) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                    task.wait()
-                end
-            end)
-				local A_1 = "AdvanceStep"
-				local A_2 = 
-					{
-						["QuestName"] = "WaterQuest2", 
-						["Step"] = i
-					}
-				if Player:DistanceFromCharacter(waterGuy.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
-					break;
+			task.spawn(function()
+				while duration do
+					Character.HumanoidRootPart.CFrame = CFrame.new(45, 11, 521) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+					task.wait()
 				end
-                if i == 1 then
-				    task.wait(0.5)
-                else
-                    task.wait()
-                end
-                task.wait()
-				Event:InvokeServer(A_1, A_2)
-                if i == 6 then
-                    duration = false
-                    local abandon = {
-                        [1] = "Abandon"
-                    }
-                    Event:InvokeServer(unpack(abandon))
-                    Character.HumanoidRootPart.CFrame = firstCFrame
-                    Humanoid:ChangeState("Jumping")
-                end
+			end)
+			local A_1 = "AdvanceStep"
+			local A_2 = 
+				{
+					["QuestName"] = "WaterQuest2", 
+					["Step"] = i
+				}
+			if Player:DistanceFromCharacter(waterGuy.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
+				break;
+			end
+			if i == 1 then
+				task.wait(0.5)
+			else
+				task.wait()
+			end
+			task.wait()
+			Event:InvokeServer(A_1, A_2)
+			if i == 6 then
+				duration = false
+				local abandon = {
+					[1] = "Abandon"
+				}
+				Event:InvokeServer(unpack(abandon))
+				Character.HumanoidRootPart.CFrame = firstCFrame
+				Humanoid:ChangeState("Jumping")
+			end
 		end
 	end
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		CatchFish()
 	end)
@@ -8368,8 +9605,8 @@ local function AVYM_fake_script() -- ScreenGui.FindLetterBtn.LocalScript
 	local third;
 	local four;
 	local five;
-	local firstCFrame = Character.HumanoidRootPart.CFrame
 	function FindLetter()
+		local firstCFrame = Character.HumanoidRootPart.CFrame
 		for i = 0,5 do
 			-- Find Letter Auto Quest -- 
 			if i == 1 then 
@@ -8386,9 +9623,9 @@ local function AVYM_fake_script() -- ScreenGui.FindLetterBtn.LocalScript
 						["QuestName"] = "FireQuest2", 
 						["Step"] = 1
 					}
-					if Player:DistanceFromCharacter(womanNPC.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
-						break;
-					end
+				if Player:DistanceFromCharacter(womanNPC.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
+					break;
+				end
 				local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
 				task.wait(0.5)
 				Event:InvokeServer(A1, A2)
@@ -8407,9 +9644,9 @@ local function AVYM_fake_script() -- ScreenGui.FindLetterBtn.LocalScript
 						["QuestName"] = "FireQuest2", 
 						["Step"] = 2
 					}
-					if Player:DistanceFromCharacter(noneNPC.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
-						break;
-					end
+				if Player:DistanceFromCharacter(noneNPC.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
+					break;
+				end
 				local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
 				task.wait(0.5)
 				Event:InvokeServer(A1, A2)
@@ -8449,9 +9686,9 @@ local function AVYM_fake_script() -- ScreenGui.FindLetterBtn.LocalScript
 						["QuestName"] = "FireQuest2", 
 						["Step"] = 4
 					}
-					if Player:DistanceFromCharacter(noneNPC.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
-						break;
-					end
+				if Player:DistanceFromCharacter(noneNPC.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
+					break;
+				end
 				local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
 				task.wait(0.5)
 				Event:InvokeServer(A_1, A_2)
@@ -8470,9 +9707,9 @@ local function AVYM_fake_script() -- ScreenGui.FindLetterBtn.LocalScript
 						["QuestName"] = "FireQuest2", 
 						["Step"] = 5
 					}
-					if Player:DistanceFromCharacter(womanNPC.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
-						break;
-					end
+				if Player:DistanceFromCharacter(womanNPC.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
+					break;
+				end
 				local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
 				task.wait(0.5)
 				Event:InvokeServer(A_1, A_2)
@@ -8482,7 +9719,7 @@ local function AVYM_fake_script() -- ScreenGui.FindLetterBtn.LocalScript
 			end
 		end
 	end
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		FindLetter()
 	end)
@@ -8500,24 +9737,24 @@ local function KQBA_fake_script() -- ScreenGui.FindScrollBtn.LocalScript
 	local humanoid = plr.Character.Humanoid
 	local char = plr.Character
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-    local first;
-    local second;
-    local third;
-    local fourth;
-    local five;
-    local six;
-    local firstCFrame = char.HumanoidRootPart.CFrame
+	local first;
+	local second;
+	local third;
+	local fourth;
+	local five;
+	local six;
 	local function FindScroll()
+		local firstCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		for i = 0,6 do
 			-- Find Letter Auto Quest -- 
 			if i == 1 then
-                first = true;
-                task.spawn(function()
-                    while first do
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6288, 161, -6392) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                        task.wait()
-                    end
-                end)
+				first = true;
+				task.spawn(function()
+					while first do
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6288, 161, -6392) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+						task.wait()
+					end
+				end)
 				local A_1 = "AdvanceStep"
 				local A_2 = 
 					{
@@ -8530,15 +9767,15 @@ local function KQBA_fake_script() -- ScreenGui.FindScrollBtn.LocalScript
 				end
 				task.wait(0.5)
 				Event:InvokeServer(A_1, A_2)
-                first = false;
+				first = false;
 			elseif i == 2 then
-                second = true;
-                task.spawn(function()
-                    while second do
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6154, 161, -6245) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                        task.wait()
-                    end
-                end)
+				second = true;
+				task.spawn(function()
+					while second do
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6154, 161, -6245) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+						task.wait()
+					end
+				end)
 				local A_1 = "AdvanceStep"
 				local A_2 = 
 					{
@@ -8551,15 +9788,15 @@ local function KQBA_fake_script() -- ScreenGui.FindScrollBtn.LocalScript
 				end
 				task.wait(0.5)
 				Event:InvokeServer(A_1, A_2)
-                second = false
+				second = false
 			elseif i == 3 then
-                third = true;
-                task.spawn(function()
-                    while third do
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6514, 161, -6159) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                        task.wait()
-                    end
-                end)
+				third = true;
+				task.spawn(function()
+					while third do
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6514, 161, -6159) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+						task.wait()
+					end
+				end)
 
 				local A_1 = "AdvanceStep"
 				local A_2 = 
@@ -8573,15 +9810,15 @@ local function KQBA_fake_script() -- ScreenGui.FindScrollBtn.LocalScript
 				end
 				task.wait(0.5)
 				Event:InvokeServer(A_1, A_2)
-                third = false
+				third = false
 			elseif i == 4 then
-                fourth = true
-                task.spawn(function()
-                    while fourth do
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7039, 161, -6653) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                        task.wait()
-                    end
-                end)
+				fourth = true
+				task.spawn(function()
+					while fourth do
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7039, 161, -6653) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+						task.wait()
+					end
+				end)
 				local A_1 = "AdvanceStep"
 				local A_2 = 
 					{
@@ -8603,15 +9840,15 @@ local function KQBA_fake_script() -- ScreenGui.FindScrollBtn.LocalScript
 					}
 				task.wait(0.5)
 				Event:InvokeServer(A_1, A_2)  
-                fourth = false
+				fourth = false
 			elseif i == 6 then
-                five = true
-                task.spawn(function()
-                    while five do
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6288, 161, -6392) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                        task.wait()
-                    end
-                end)
+				five = true
+				task.spawn(function()
+					while five do
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6288, 161, -6392) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+						task.wait()
+					end
+				end)
 				local A_1 = "AdvanceStep"
 				local A_2 = 
 					{
@@ -8624,9 +9861,9 @@ local function KQBA_fake_script() -- ScreenGui.FindScrollBtn.LocalScript
 				end
 				task.wait(0.5)
 				Event:InvokeServer(A_1, A_2) 
-                five = false
-                char.HumanoidRootPart.CFrame = firstCFrame
-                humanoid:ChangeState("Jumping")
+				five = false
+				char.HumanoidRootPart.CFrame = firstCFrame
+				humanoid:ChangeState("Jumping")
 			end
 		end
 	end
@@ -8647,43 +9884,43 @@ local function UOYSB_fake_script() -- ScreenGui.LostPersonBtn.LocalScript
 	local Humanoid = Character.Humanoid
 
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-    local duration;
-    local firstCFrame = Character.HumanoidRootPart.CFrame
+	local duration;
 	local function LostPerson()
+		local firstCFrame = Character.HumanoidRootPart.CFrame
 		for i = 0,3 do
-            duration = true
+			duration = true
 			-- Find LostPerson Auto Quest -- 
-            task.spawn(function()
-                while duration do
-                    Character.HumanoidRootPart.CFrame = CFrame.new(7042, 161, -6653) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                    task.wait()
-                end
-            end)
-				local A_1 = "AdvanceStep"
-				local A_2 = 
-					{
-						["QuestName"] = "FireQuest4", 
-						["Step"] = i
-					}
-				if Player:DistanceFromCharacter(ninjaNPC.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
-					break;
+			task.spawn(function()
+				while duration do
+					Character.HumanoidRootPart.CFrame = CFrame.new(7042, 161, -6653) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+					task.wait()
 				end
-                if i == 1 then
-				    task.wait(0.5)
-                else
-                    task.wait()
-                end
-                task.wait()
-				Event:InvokeServer(A_1, A_2)
-                if i == 3 then
-                    duration = false;
-                    local abandon = {
-                        [1] = "Abandon"
-                    }
-                    Event:InvokeServer(unpack(abandon))
-                    Character.HumanoidRootPart.CFrame = firstCFrame
-                    Humanoid:ChangeState("Jumping")
-                end
+			end)
+			local A_1 = "AdvanceStep"
+			local A_2 = 
+				{
+					["QuestName"] = "FireQuest4", 
+					["Step"] = i
+				}
+			if Player:DistanceFromCharacter(ninjaNPC.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
+				break;
+			end
+			if i == 1 then
+				task.wait(0.5)
+			else
+				task.wait()
+			end
+			task.wait()
+			Event:InvokeServer(A_1, A_2)
+			if i == 3 then
+				duration = false;
+				local abandon = {
+					[1] = "Abandon"
+				}
+				Event:InvokeServer(unpack(abandon))
+				Character.HumanoidRootPart.CFrame = firstCFrame
+				Humanoid:ChangeState("Jumping")
+			end
 		end
 	end
 
@@ -8705,41 +9942,41 @@ local function CKOTQUK_fake_script() -- ScreenGui.LostHelmetBtn.LocalScript
 	local Humanoid = Character.Humanoid
 
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-    local duration;
-    local firstCFrame = Character.HumanoidRootPart.CFrame
+	local duration;
 
 	local function FindHelmet()
+		local firstCFrame = Character.HumanoidRootPart.CFrame
 		for i = 0,3 do
 			-- Find Helmet Auto Quest -- 
-                duration = true;
-                task.spawn(function()
-                    while duration do
-                        Character.HumanoidRootPart.CFrame = CFrame.new(6515, 161, -6161) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
-                        task.wait()
-                    end
-                end)
-				local A_1 = "AdvanceStep"
-				local A_2 = 
-					{
-						["QuestName"] = "FireQuest1", 
-						["Step"] = i
-					}
-				if Player:DistanceFromCharacter(helmetMan.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
-					break;
+			duration = true;
+			task.spawn(function()
+				while duration do
+					Character.HumanoidRootPart.CFrame = CFrame.new(6515, 161, -6161) * CFrame.Angles(math.rad(90), 0, 0) + Vector3.new(0,-5,0)
+					task.wait()
 				end
-                if i == 1 then
-				    task.wait(0.5)
-                end
-                task.wait()
-				Event:InvokeServer(A_1, A_2)
-                if i == 3 then
-                    duration = false;
-                    Character.HumanoidRootPart.CFrame = firstCFrame
-                    Humanoid:ChangeState("Jumping")
-                end
+			end)
+			local A_1 = "AdvanceStep"
+			local A_2 = 
+				{
+					["QuestName"] = "FireQuest1", 
+					["Step"] = i
+				}
+			if Player:DistanceFromCharacter(helmetMan.PrimaryPart.Position) > 25 and Humanoid.Health <= 0 and Character.BattlerHealth <= 0 then
+				break;
+			end
+			if i == 1 then
+				task.wait(0.5)
+			end
+			task.wait()
+			Event:InvokeServer(A_1, A_2)
+			if i == 3 then
+				duration = false;
+				Character.HumanoidRootPart.CFrame = firstCFrame
+				Humanoid:ChangeState("Jumping")
+			end
 		end
 	end
-    
+
 	script.Parent.MouseButton1Click:Connect(function()
 		FindHelmet()
 	end)
@@ -8751,7 +9988,7 @@ local function NCYPS_fake_script() -- ScreenGui.FireNationShop.LocalScript
 	script.Parent.MouseButton1Click:Connect(function()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6202, 161, -5862)
 	end)
-	
+
 end
 coroutine.wrap(NCYPS_fake_script)()
 local function ZWASKW_fake_script() -- ScreenGui.VehicleShop.LocalScript 
@@ -8767,8 +10004,8 @@ local function AZRHDTS_fake_script() -- ScreenGui.FindBisionBtn.LocalScript
 	local first = false
 	local second = false
 	local third = true
-	local firstCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 	function FindBabyBison()
+		local firstCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		for i = 0,3 do
 			-- Find Granny Auto Quest -- 
 			task.spawn(function()
@@ -8820,8 +10057,8 @@ local function HKATM_fake_script() -- ScreenGui.DeliverNoteBtn.LocalScript
 	local first = false
 	local second = false
 	local third = false
-	local firstCFrame = Character.HumanoidRootPart.CFrame
- local function DeliverNote()
+	local function DeliverNote()
+		local firstCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		for i = 0,3 do
 			-- Deliver Note Auto Quest -- 
 			if i == 1 then
@@ -8910,15 +10147,15 @@ local function QKDUYK_fake_script() -- ScreenGui.FindGliderBtn.LocalScript
 	local waterGirl = game:GetService("Workspace").QuestNPCs.WaterNPC2
 	local Players = game:GetService("Players")
 	local Player = Players.LocalPlayer
-	
+
 	local Character = Player.Character
-	
+
 	local Humanoid = Character.Humanoid
-	
+
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-	
-	local firstCFrame = Character.HumanoidRootPart.CFrame
+
 	function LostGlider()
+		local firstCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		for i = 0,6 do
 			-- Find Glider Auto Quest -- 
 			if i == 1 then 
@@ -8981,7 +10218,7 @@ local function QKDUYK_fake_script() -- ScreenGui.FindGliderBtn.LocalScript
 				task.wait(0.5)
 				Event:InvokeServer(A_1, A_2)
 				third = false;
-	
+
 			elseif i == 4 then
 				fourth = true;
 				task.spawn(function()
@@ -9039,7 +10276,7 @@ local function QKDUYK_fake_script() -- ScreenGui.FindGliderBtn.LocalScript
 			end
 		end
 	end
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		LostGlider()
 	end)
@@ -9073,10 +10310,11 @@ local function YAOEJVQ_fake_script() -- ScreenGui.CrownBtn.LocalScript
 	local Humanoid = Character.Humanoid
 
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-    local previousLocation = Character.HumanoidRootPart.CFrame
+	local previousLocation = Character.HumanoidRootPart.CFrame
 	local duration;
 
 	function FindCrown()
+		local previousLocation = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		for i = 0,3 do
 			duration = true
 			-- Find Crown Auto Quest --
@@ -9140,6 +10378,7 @@ local function BNMX_fake_script() -- ScreenGui.LostChildBtn.LocalScript
 
 	local firstCFrame = Character.HumanoidRootPart.CFrame
 	function FindMother()
+		local firstCFrame = Character.HumanoidRootPart.CFrame
 		for i = 0,2 do
 			-- Lost Mother Auto Quest -- 
 			if i == 1 then 
@@ -9194,12 +10433,12 @@ local function BNMX_fake_script() -- ScreenGui.LostChildBtn.LocalScript
 	script.Parent.MouseButton1Click:Connect(function()
 		FindMother()
 	end)
-	
+
 end
 coroutine.wrap(BNMX_fake_script)()
 local function XUFLNSV_fake_script() -- ScreenGui.FindCrimBtn.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui.FindCrimBtn)
-	
+
 	local earthChild = game:GetService("Workspace").QuestNPCs.EarthNPC2[""]
 	local earthGuy = game:GetService("Workspace").QuestNPCs.EarthNPC1[""]
 	local earthMother = game:GetService("Workspace").QuestNPCs.EarthNPC4[""]
@@ -9218,9 +10457,8 @@ local function XUFLNSV_fake_script() -- ScreenGui.FindCrimBtn.LocalScript
 	local third;
 	local four;
 
-	local firstCFrame = Character.HumanoidRootPart.CFrame
-
 	function FindCriminal()
+		local firstCFrame = Character.HumanoidRootPart.CFrame
 		for i = 0,4 do
 			-- Find Mother Auto Quest -- 
 			if i == 1 then 
@@ -9472,7 +10710,7 @@ local function BDGKZ_fake_script() -- ScreenGui.MenuTB.LocalScript
 			Main.Visible = not Main.Visible -- flip between visible/invisible
 		end
 	end)
-	
+
 end
 coroutine.wrap(BDGKZ_fake_script)()
 local function UDHX_fake_script() -- ScreenGui.BlueBtn.BlueScript 
@@ -9494,7 +10732,7 @@ local function UDHX_fake_script() -- ScreenGui.BlueBtn.BlueScript
 		BackgroundColor3 = Color3.fromRGB(65, 160, 186), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(65, 160, 186) --SliderInner Color
 	}
-	
+
 	local TS = game:GetService("TweenService")
 	script.Parent.MouseButton1Click:Connect(function()
 		TS:Create(ColorLine, TweenInfo.new(0.5), ColorLineTable):Play()
@@ -9524,7 +10762,7 @@ local function YZOI_fake_script() -- ScreenGui.OrangeBtn.OrangeScript
 		BackgroundColor3 = Color3.fromRGB(255, 179, 71), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(255, 179, 71) --SliderInner Color
 	}
-	
+
 	local TS = game:GetService("TweenService")
 	script.Parent.MouseButton1Click:Connect(function()
 		TS:Create(ColorLine, TweenInfo.new(0.5), ColorLineTable):Play()
@@ -9554,7 +10792,7 @@ local function GKMD_fake_script() -- ScreenGui.PurpleBtn.PurpleScript
 		BackgroundColor3 = Color3.fromRGB(153,102,204),
 		BorderColor3 = Color3.fromRGB(153,102,204)
 	}
-	
+
 	local TS = game:GetService("TweenService")
 	script.Parent.MouseButton1Click:Connect(function()
 		TS:Create(ColorLine, TweenInfo.new(0.5), ColorLineTable):Play()
@@ -9584,7 +10822,7 @@ local function GJIMDOE_fake_script() -- ScreenGui.GreyBtn.GreyScript
 		BackgroundColor3 = Color3.fromRGB(149, 149, 149), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(149, 149, 149) --SliderInner Color
 	}
-	
+
 	local TS = game:GetService("TweenService")
 	script.Parent.MouseButton1Click:Connect(function()
 		TS:Create(ColorLine, TweenInfo.new(0.5), ColorLineTable):Play()
@@ -9614,7 +10852,7 @@ local function DVNJ_fake_script() -- ScreenGui.GreenBtn.GreenScript
 		BackgroundColor3 = Color3.fromRGB(26, 176, 109), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(26, 176, 109) --SliderInner Color
 	}
-	
+
 	local TS = game:GetService("TweenService")
 	script.Parent.MouseButton1Click:Connect(function()
 		TS:Create(ColorLine, TweenInfo.new(0.5), ColorLineTable):Play()
@@ -9644,7 +10882,7 @@ local function WBZXPIG_fake_script() -- ScreenGui.RedBtn.RedScript
 		BackgroundColor3 = Color3.fromRGB(200, 22, 39), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(200, 22, 39) --SliderInner Color
 	}
-	
+
 	local TS = game:GetService("TweenService")
 	script.Parent.MouseButton1Click:Connect(function()
 		TS:Create(ColorLine, TweenInfo.new(0.5), ColorLineTable):Play()
@@ -9668,8 +10906,8 @@ local function BPKWR_fake_script() -- ScreenGui.CircleButton_2.LocalScript
 	local ExitBtn = script.Parent.Parent.Parent.Parent.Parent.Parent.Tabs.ExitFrame.ExitButton
 	local TS = game:GetService("TweenService")
 	local LowerBar = script.Parent.Parent.Parent.Parent.Parent.Parent.LowerBar
-	
-	
+
+
 	local ColorLineTable1 = {
 		BackgroundColor3 = Color3.fromRGB(200, 22, 39), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(155, 17, 30) -- SliderBack Color
@@ -9678,7 +10916,7 @@ local function BPKWR_fake_script() -- ScreenGui.CircleButton_2.LocalScript
 		BackgroundColor3 = Color3.fromRGB(200, 22, 39), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(200, 22, 39) --SliderInner Color
 	}
-	
+
 	local ColorLineTable2 = {
 		BackgroundColor3 = Color3.fromRGB(255, 179, 71), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(229, 141, 0) -- SliderBack Color
@@ -9687,7 +10925,7 @@ local function BPKWR_fake_script() -- ScreenGui.CircleButton_2.LocalScript
 		BackgroundColor3 = Color3.fromRGB(255, 179, 71), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(255, 179, 71) --SliderInner Color
 	}
-	
+
 	local ColorLineTable3= {
 		BackgroundColor3 = Color3.fromRGB(26, 176, 109), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(21, 148, 91) -- SliderBack Color
@@ -9696,7 +10934,7 @@ local function BPKWR_fake_script() -- ScreenGui.CircleButton_2.LocalScript
 		BackgroundColor3 = Color3.fromRGB(26, 176, 109), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(26, 176, 109) --SliderInner Color
 	}
-	
+
 	local ColorLineTable4 = {
 		BackgroundColor3 = Color3.fromRGB(65, 160, 186), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(51, 129, 148) -- SliderBack Color
@@ -9705,7 +10943,7 @@ local function BPKWR_fake_script() -- ScreenGui.CircleButton_2.LocalScript
 		BackgroundColor3 = Color3.fromRGB(65, 160, 186), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(65, 160, 186) --SliderInner Color
 	}
-	
+
 	local ColorLineTable5 = {
 		BackgroundColor3 = Color3.fromRGB(153, 102, 204), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(120, 81, 169) -- SliderBack Color
@@ -9714,7 +10952,7 @@ local function BPKWR_fake_script() -- ScreenGui.CircleButton_2.LocalScript
 		BackgroundColor3 = Color3.fromRGB(153,102,204),
 		BorderColor3 = Color3.fromRGB(153,102,204)
 	}
-	
+
 	local ColorLineTable6 = {
 		BackgroundColor3 = Color3.fromRGB(149, 149, 149), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(130, 130, 130) -- SliderBack Color
@@ -9723,26 +10961,26 @@ local function BPKWR_fake_script() -- ScreenGui.CircleButton_2.LocalScript
 		BackgroundColor3 = Color3.fromRGB(149, 149, 149), --SliderInner Color
 		BorderColor3 = Color3.fromRGB(149, 149, 149) --SliderInner Color
 	}
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		if toggled then -- Meaning its already on
-				Off.Visible = true
-				On.Visible = false
-				debounce = true
-				game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0, 0,0, 0)}):Play()
-				game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(255, 0, 0)}):Play()
-				wait(0.25)
-				debounce = false
-				toggled = false
+			Off.Visible = true
+			On.Visible = false
+			debounce = true
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0, 0,0, 0)}):Play()
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+			wait(0.25)
+			debounce = false
+			toggled = false
 		elseif toggled == false then -- Meaning its already off
-				On.Visible = true
-				Off.Visible = false
-				debounce = true
-				game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0.532, 0, 0.033, 0)}):Play()
-				game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(0, 255, 0)}):Play()
-				wait(0.25)
-				debounce = false
-				toggled = true
+			On.Visible = true
+			Off.Visible = false
+			debounce = true
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0.532, 0, 0.033, 0)}):Play()
+			game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(0, 255, 0)}):Play()
+			wait(0.25)
+			debounce = false
+			toggled = true
 		end	
 		while toggled do
 			TS:Create(TopBar, TweenInfo.new(0.5),TopBarTable1):Play() -- Red
@@ -9777,9 +11015,9 @@ local function BPKWR_fake_script() -- ScreenGui.CircleButton_2.LocalScript
 			wait(1)
 		end
 	end)
-	
-	
-	
+
+
+
 end
 coroutine.wrap(BPKWR_fake_script)()
 local function RBOJRE_fake_script() -- ScreenGui.ExtrasBtn.ExtraScript 
@@ -9914,9 +11152,9 @@ local function OSZZ_fake_script() -- ScreenGui.MaxStats.PurpleScript
 			}
 		local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
 		Event:InvokeServer(A_1, A_2)
-	
+
 		wait(1)
-	
+
 		local A_1 = "IncreaseStat"
 		local A_2 = 
 			{
@@ -9928,7 +11166,7 @@ local function OSZZ_fake_script() -- ScreenGui.MaxStats.PurpleScript
 		wait(1)
 		game:GetService("Players").LocalPlayer.PlayerData.Stats.Stamina.Value = 400
 	end)
-	
+
 end
 coroutine.wrap(OSZZ_fake_script)()
 local function NDFDGHT_fake_script() -- ScreenGui.SliderBtn.LocalScript 
@@ -9936,7 +11174,7 @@ local function NDFDGHT_fake_script() -- ScreenGui.SliderBtn.LocalScript
 
 	minvalue = minvalue or 0
 	maxvalue = maxvalue or 200
-	
+
 	-----Variables-----
 	local mouse = game.Players.LocalPlayer:GetMouse()
 	local uis = game:GetService("UserInputService")
@@ -9944,16 +11182,17 @@ local function NDFDGHT_fake_script() -- ScreenGui.SliderBtn.LocalScript
 	local btn = script.Parent
 	local frame = script.Parent.SliderBtn_Roundify_12px.SliderInner
 	local t = script.Parent.Parent.SliderCurrent
-	
-	
-	
-	
+
+
+
+
 	-----Main Code-----
-	
+
 	btn.MouseButton1Down:Connect(function()
 		Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 245) * frame .AbsoluteSize.X) + tonumber(minvalue)) or 0
 		spawn(function()
-			while wait(0.25) do
+			while true do
+				task.wait(0.25)
 				for i ,v in pairs (game.Players:GetPlayers()) do
 					if v.Name ~= game.Players.LocalPlayer.Name then
 						v.Character.HumanoidRootPart.CanCollide = false
@@ -9967,10 +11206,11 @@ local function NDFDGHT_fake_script() -- ScreenGui.SliderBtn.LocalScript
 		moveconnection = mouse.Move:Connect(function()
 			t.Text = Value
 			Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 245) * frame .AbsoluteSize.X) + tonumber(minvalue))
-	
-	
+
+
 			spawn(function()
-				while wait(0.25) do
+				while true do
+					task.wait(0.25)
 					for i ,v in pairs (game.Players:GetPlayers()) do
 						if v.Name ~= game.Players.LocalPlayer.Name then
 							v.Character.HumanoidRootPart.CanCollide = false
@@ -9985,14 +11225,15 @@ local function NDFDGHT_fake_script() -- ScreenGui.SliderBtn.LocalScript
 			if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
 				Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) /245) * frame .AbsoluteSize.X) + tonumber(minvalue))
 				spawn(function()
-					while wait(0.25) do
+					while true do
+						task.wait(0.25)
 						for i ,v in pairs (game.Players:GetPlayers()) do
 							if v.Name ~= game.Players.LocalPlayer.Name then
 								v.Character.HumanoidRootPart.CanCollide = false
 								v.Character.HumanoidRootPart.Size = Vector3.new(Value,Value,Value+1)
 							end
 						end
-						end
+					end
 				end)
 				frame.Size = UDim2.new(0, math.clamp(mouse.X - frame .AbsolutePosition.X, 0, 245), 0, 13)
 				moveconnection:Disconnect()
@@ -10000,7 +11241,7 @@ local function NDFDGHT_fake_script() -- ScreenGui.SliderBtn.LocalScript
 			end
 		end)
 	end)
-	
+
 end
 coroutine.wrap(NDFDGHT_fake_script)()
 local function YHNHUTL_fake_script() -- ScreenGui.Purple.PurpleScript 
@@ -10067,48 +11308,49 @@ local function JPLHBM_fake_script() -- ScreenGui.DropBtn.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.DropBtn)
 
 	local dropped = false
-	local waitTime = 0.10
-	
-	script.Parent.MouseButton1Click:Connect(function()
-		if dropped == false then
-			script.Parent.Parent:TweenSize(UDim2.new(0, 307,0, 125), nil,nil,waitTime)
-			wait(waitTime)
-			game.TweenService:Create(script.Parent.Parent.Frame, TweenInfo.new(waitTime), {
-				Visible = true
-			}):Play()
-			script.Parent.ImageRectOffset = Vector2.new(0, 450)
-			script.Parent.ImageRectSize = Vector2.new(50, 50)
-			dropped = true
-		elseif dropped then
-			game.TweenService:Create(script.Parent.Parent.Frame, TweenInfo.new(waitTime), {
-				Visible = false
-			}):Play()
-			script.Parent.Parent:TweenSize(UDim2.new(0, 307,0, 34),nil,nil,waitTime)
-			wait(0.25)
-			script.Parent.ImageRectOffset = Vector2.new(0, 600)
-			script.Parent.ImageRectSize = Vector2.new(50, 50)
-			dropped = false
-		end
-	end)
+    local waitTime = 0.10
+
+    script.Parent.MouseButton1Click:Connect(function()
+        if dropped == false then
+            script.Parent.Parent:TweenSize(UDim2.new(0, 363,0, 125), nil,nil,waitTime)
+            wait(waitTime)
+            game.TweenService:Create(script.Parent.Parent.Frame, TweenInfo.new(waitTime), {
+                Visible = true
+            }):Play()
+            script.Parent.ImageRectOffset = Vector2.new(0, 450)
+            script.Parent.ImageRectSize = Vector2.new(50, 50)
+            dropped = true
+        elseif dropped then
+            game.TweenService:Create(script.Parent.Parent.Frame, TweenInfo.new(waitTime), {
+                Visible = false
+            }):Play()
+            script.Parent.Parent:TweenSize(UDim2.new(0, 363,0, 34),nil,nil,waitTime)
+            wait(0.25)
+            script.Parent.ImageRectOffset = Vector2.new(0, 600)
+            script.Parent.ImageRectSize = Vector2.new(50, 50)
+            dropped = false
+        end
+    end)    
 end
 coroutine.wrap(JPLHBM_fake_script)()
 local function JQXJVHA_fake_script() -- ScreenGui.ScrollTP.ScrollScript 
 	local script = Instance.new('LocalScript', ScreenGui.ScrollTP)
 
 	local scroll = game.Workspace:WaitForChild("ScrollModel")
-	
+
 	spawn(function()
-		while wait(1) do
-			if game.Workspace.ScrollModel then
+		while true do
+			wait(1)
+			if (game.Workspace.ScrollModel ~= nil) then
 				script.Parent.TextColor3  = Color3.fromRGB(0, 190, 0)
 				script.Parent.Text = "Found"
-			else
+			elseif (not(game.Workspace.ScrollModel)) then
 				script.Parent.TextColor3 = Color3.fromRGB(208, 0, 0)
 				script.Parent.Text = "None"
 			end
 		end
 	end)
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = scroll.Center.CFrame
 	end)
@@ -10118,7 +11360,7 @@ local function GPZU_fake_script() -- ScreenGui.TextBox.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui.TextBox)
 
 	script.Parent.FocusLost:Connect(function()
-		while wait(0.25) do
+		while true do
 			for i ,v in pairs (game.Players:GetChildren()) do
 				if v.Character and v.Character.HumanoidRootPart and v.Name ~= game.Players.LocalPlayer.Name then
 					v.Character.HumanoidRootPart.Transparency = script.Parent.Text
@@ -10134,7 +11376,7 @@ local function EGLPWFL_fake_script() -- ScreenGui.TeleportTB.LocalScript
 
 	script.Parent.FocusLost:Connect(function()
 		for i,v in pairs(game.Players:GetChildren()) do
-			if (string.sub(string.lower(v.Name),1,string.len(script.Parent.Text))) == string.lower(script.Parent.Text) then
+			if ((string.sub(string.lower(v.Name),1,string.len(script.Parent.Text))) == string.lower(script.Parent.Text) and v.Character ~= nil) then
 				script.Parent.Text = v.Name
 			end
 		end
@@ -10143,17 +11385,16 @@ end
 coroutine.wrap(EGLPWFL_fake_script)()
 local function APWRT_fake_script() -- ScreenGui.TPButton.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui.TPButton)
-
+	local arg = script.Parent.TeleportTB
+	local Players = game:GetService("Players")
 	script.Parent.MouseButton1Click:Connect(function()
-		local arg = script.Parent.TeleportTB
-		local Players = game:GetService("Players")
-		
-		local plr = Players.LocalPlayer.Character.HumanoidRootPart
-		local person = Players[arg.Text].Character.HumanoidRootPart
-		plr.CFrame = person.CFrame
-	
+		if game.Players[arg.Text].Character ~= nil and game.Players[arg.Text].Character.Humanoid.Health > 0 then
+			local plr = Players.LocalPlayer.Character.HumanoidRootPart
+			local person = Players[arg.Text].Character.HumanoidRootPart
+			plr.CFrame = person.CFrame
+		end
 	end)
-	
+
 end
 coroutine.wrap(APWRT_fake_script)()
 local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript 
@@ -10170,7 +11411,7 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 			["Key"] = "E"
 		}
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-	
+
 	local A1 = "ProcessKey"
 	local A2 = 
 		{
@@ -10178,11 +11419,10 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 		}
 	script.Parent.MouseButton1Click:Connect(function()
 		local plr = Players.LocalPlayer.Character.HumanoidRootPart
-		local check = assert(arg, "Enter a valid player")
-		if check then
+		if Players[arg.Text].Character ~= nil then
 			local person = Players[arg.Text].Character.HumanoidRootPart
 			local place = plr.CFrame
-		
+
 			task.spawn(function()
 				while Players[arg.Text].Character.Humanoid.Health > 0 do
 					plr.CFrame = person.CFrame
@@ -10193,15 +11433,17 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 				while true do
 					local count = 1
 					if Players[arg.Text].Character then
-						if Players[arg.Text].Character.Humanoid.Health == 0 then
+						if (Players[arg.Text].Character.Humanoid.Health == 0) then
+							finished = true;
 							duration = false;
 							game.StarterGui:SetCore("SendNotification", {
 								Text = arg.Text.. " has been killed",
 								Title = "[Kill Player Feature]",
-								Duration = 1
+								Duration = 3
 							})
 							task.wait(0.25)
 							plr.CFrame = place
+							break;
 						end
 					else
 						game.StarterGui:SetCore("SendNotification", {
@@ -10220,9 +11462,9 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 					task.wait(1)
 				end
 			end)
-		
+
 			while duration do
-				if game.Players.LocalPlayer.PlayerData.Stats.Level.Value and Players[arg.Text].Character.Humanoid.Health > 0 then
+				if game.Players.LocalPlayer.PlayerData.Stats.Level.Value and Players[arg.Text].Character.Humanoid.Health > 0 and not(finished) then
 					if Players.LocalPlayer.PlayerData.Appearance.Elements ~= "Air" then
 						local args = {
 							[1] = "ProcessKey",
@@ -10234,7 +11476,7 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 						}
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 15 and Players.LocalPlayer.PlayerData.Appearance.Elements ~= "Air" and Players[arg.Text].Character.Humanoid.Health > 0  then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 15 and Players.LocalPlayer.PlayerData.Appearance.Elements ~= "Air" and Players[arg.Text].Character.Humanoid.Health > 0 and not (finished)  then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10243,10 +11485,10 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 25 and Players[arg.Text].Character.Humanoid.Health > 0 then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 25 and Players[arg.Text].Character.Humanoid.Health > 0 and not(finished)  then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10255,11 +11497,11 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
 					end
-		
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 50 and Players[arg.Text].Character.Humanoid.Health > 0 then
+
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 50 and Players[arg.Text].Character.Humanoid.Health > 0 and not(finished)  then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10268,11 +11510,11 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
-		
+
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 75 and Players[arg.Text].Character.Humanoid.Health > 0  then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 75 and Players[arg.Text].Character.Humanoid.Health > 0 and not(finished)  then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10281,10 +11523,10 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 100 and Players[arg.Text].Character.Humanoid.Health > 0  then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 100 and Players[arg.Text].Character.Humanoid.Health > 0 and not(finished)   then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10293,10 +11535,10 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 150 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0 then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 150 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0 and not(finished)  then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10305,11 +11547,11 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-		
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
-						
+
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 200 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0 then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 200 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0 and not(finished)  then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10318,11 +11560,11 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
-		
+
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 250 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0  then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 250 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0 and not(finished)   then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10331,9 +11573,9 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
-		
+
 					end
 				end
 				if Players[arg.Text].Character.Humanoid.Health < 1 then
@@ -10341,15 +11583,22 @@ local function HXNT_fake_script() -- ScreenGui.KillPlayerBtn.LocalScript
 					break;
 				end
 				task.wait(3)
-					
+
 			end
 			plr.CFrame = place
+		else
+			game.StarterGui:SetCore("SendNotification", {
+				Text = arg.Text.. " has not spawned",
+				Title = "[Kill Player Feature]",
+				Duration = 1
+			})
 		end
 	end)
 end
 coroutine.wrap(HXNT_fake_script)()
 local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui.CircleButton_4)
+	local killed = false;
 
 	local toggled = false
 	local debounce = false
@@ -10358,50 +11607,49 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 	local Off = script.Parent.Parent.Parent.ToggleOffText
 	local arg = script.Parent.Parent.Parent.Parent.Parent.TPButton.TeleportTB
 	local Players = game:GetService("Players")
-	
+
 	local A_1 = "ProcessKey"
 	local A_2 = 
 		{
 			["Key"] = "E"
 		}
 	local Event = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-	
+
 	local A1 = "ProcessKey"
 	local A2 = 
 		{
 			["Key"] = "Q"
 		}
 	local PunchLeft = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		if debounce == false then
-				if toggled then -- Meaning its already on
-					Off.Visible = true
-					On.Visible = false
-					debounce = true
+			if toggled then -- Meaning its already on
+				Off.Visible = true
+				On.Visible = false
+				debounce = true
 				game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0, 0,0, 0)}):Play()
-					game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(255, 0, 0)}):Play()
-					wait(0.25)
-					debounce = false
-					toggled = false
-				
+				game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+				wait(0.25)
+				debounce = false
+				toggled = false
+
 			elseif toggled == false then -- Meaning its already off
-					On.Visible = true
-					Off.Visible = false
-					debounce = true
+				On.Visible = true
+				Off.Visible = false
+				debounce = true
 				game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25), {Position = UDim2.new(0.532, 0, 0.033, 0)}):Play()
-					game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(0, 255, 0)}):Play()
-					wait(0.25)
-					debounce = false
-					toggled = true
-			 end
+				game:GetService("TweenService"):Create(Circle, TweenInfo.new(0.25) , {ImageColor3 = Color3.fromRGB(0, 255, 0)}):Play()
+				wait(0.25)
+				debounce = false
+				toggled = true
+			end
 		end	
 		local plr = Players.LocalPlayer.Character.HumanoidRootPart
-		local check = assert(arg, "Enter a valid player")
-		if check then
+		if Players[arg.Text].Character ~= nil then
 			local person = Players[arg.Text].Character.HumanoidRootPart
 			local place = plr.CFrame
-		
+
 			task.spawn(function()
 				while toggled do
 					plr.CFrame = person.CFrame
@@ -10409,10 +11657,10 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 				end
 			end)
 			task.spawn(function()
-				while true do
+				while toggled do
 					local count = 1
 					if Players[arg.Text].Character then
-						if Players[arg.Text].Character.Humanoid.Health == 0 then
+						if (Players[arg.Text].Character.Humanoid.Health == 0) then
 							duration = false;
 							game.StarterGui:SetCore("SendNotification", {
 								Text = arg.Text.. " has been killed",
@@ -10421,7 +11669,9 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 							})
 							task.wait(0.25)
 							plr.CFrame = place
+							killed = true
 						end
+						killed = false;
 					else
 						game.StarterGui:SetCore("SendNotification", {
 							Text = arg.Text.. " hasn't spawned",
@@ -10439,9 +11689,9 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 					task.wait(1)
 				end
 			end)
-		
+
 			while toggled do
-				if game.Players.LocalPlayer.PlayerData.Stats.Level.Value and Players[arg.Text].Character.Humanoid.Health > 0 then
+				if game.Players.LocalPlayer.PlayerData.Stats.Level.Value and Players[arg.Text].Character.Humanoid.Health > 0 and toggled then
 					if Players.LocalPlayer.PlayerData.Appearance.Elements ~= "Air" then
 						local args = {
 							[1] = "ProcessKey",
@@ -10453,7 +11703,7 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 						}
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 15 and Players.LocalPlayer.PlayerData.Appearance.Elements ~= "Air" and Players[arg.Text].Character.Humanoid.Health > 0  then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 15 and Players.LocalPlayer.PlayerData.Appearance.Elements ~= "Air" and Players[arg.Text].Character.Humanoid.Health > 0 and toggled  then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10462,10 +11712,10 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 25 and Players[arg.Text].Character.Humanoid.Health > 0 then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 25 and Players[arg.Text].Character.Humanoid.Health > 0 and toggled then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10474,11 +11724,11 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
 					end
-		
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 50 and Players[arg.Text].Character.Humanoid.Health > 0 then
+
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 50 and Players[arg.Text].Character.Humanoid.Health > 0 and toggled then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10487,11 +11737,11 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
-		
+
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 75 and Players[arg.Text].Character.Humanoid.Health > 0  then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 75 and Players[arg.Text].Character.Humanoid.Health > 0 and toggled  then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10500,10 +11750,10 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 100 and Players[arg.Text].Character.Humanoid.Health > 0  then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 100 and Players[arg.Text].Character.Humanoid.Health > 0 and toggled  then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10512,10 +11762,10 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 150 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0 then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 150 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0 and toggled then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10524,11 +11774,11 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-		
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
-						
+
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 200 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0 then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 200 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0 and toggled then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10537,11 +11787,11 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
-		
+
 					end
-					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 250 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0  then
+					if game.Players.LocalPlayer.PlayerData.Stats.Level.Value >= 250 and Players.LocalPlayer.PlayerData.Appearance.Special.Value ~= "Combustion" and Players[arg.Text].Character.Humanoid.Health > 0 and toggled  then
 						local args = {
 							[1] = "ProcessKey",
 							[2] = {
@@ -10550,9 +11800,9 @@ local function HLLXSJ_fake_script() -- ScreenGui.CircleButton_4.LocalScript
 								["ExtraData"] = {}
 							}
 						}
-						
+
 						game:GetService("ReplicatedStorage").NetworkFolder.GameFunction:InvokeServer(unpack(args))
-		
+
 					end
 				end
 				if toggled == false then
@@ -10579,25 +11829,25 @@ local function WHZRPGB_fake_script() -- ScreenGui.Main.Draggable
 	local script = Instance.new('LocalScript', ScreenGui.Main)
 
 	local UserInputService = game:GetService("UserInputService")
-	
+
 	local gui = script.Parent
-	
+
 	local dragging
 	local dragInput
 	local dragStart
 	local startPos
-	
+
 	local function update(input)
 		local delta = input.Position - dragStart
 		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
 	end
-	
+
 	gui.InputBegan:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 			dragging = true
 			dragStart = input.Position
 			startPos = gui.Position
-	
+
 			input.Changed:Connect(function()
 				if input.UserInputState == Enum.UserInputState.End then
 					dragging = false
@@ -10605,13 +11855,13 @@ local function WHZRPGB_fake_script() -- ScreenGui.Main.Draggable
 			end)
 		end
 	end)
-	
+
 	gui.InputChanged:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 			dragInput = input
 		end
 	end)
-	
+
 	UserInputService.InputChanged:Connect(function(input)
 		if input == dragInput and dragging then
 			update(input)
