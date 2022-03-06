@@ -2423,9 +2423,8 @@ ScreenGui.MaxLevel.MouseButton1Click:Connect(function()
 		end
 	end)
 
-
+	character.BattlerHealth:Destroy()
 	local function maxLevel()
-        character.BattlerHealth:Destroy()
 		for i = 0,20 do -- Red Lotus Quest
 			task.spawn(function()
 				while i < 20 do
