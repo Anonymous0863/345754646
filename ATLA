@@ -341,6 +341,9 @@ local ScreenGui = {
 	Roundify = Instance.new("UICorner"),
 	ShopBtn = Instance.new("TextButton"),
 	Roundify2 = Instance.new("UICorner"),
+	HighTextLine = Instance.new("Frame"),
+	VehicleBoost = Instance.new("TextButton"),
+	VehicleBoostRound = Instance.new("UICorner"),
     QuitLotus = Instance.new("TextButton"),
     QuitLotusRound = Instance.new("UICorner"),
     CombatBtn = Instance.new("TextButton"),
@@ -2312,7 +2315,7 @@ ScreenGui.TextLIne_8.Name = "TextLIne"
 ScreenGui.TextLIne_8.Parent = ScreenGui.OthersF
 ScreenGui.TextLIne_8.BackgroundColor3 = Color3.fromRGB(145, 145, 145)
 ScreenGui.TextLIne_8.BorderColor3 = Color3.fromRGB(145, 145, 145)
-ScreenGui.TextLIne_8.Position = UDim2.new(0.027, 0,0.572, 0)
+ScreenGui.TextLIne_8.Position = UDim2.new(0.027, 0,0.628, 0)
 ScreenGui.TextLIne_8.Size = UDim2.new(0, 374,0, 0)
 
 
@@ -2320,7 +2323,7 @@ ScreenGui.ScrollFrame.Name = "ScrollFrame"
 ScreenGui.ScrollFrame.Parent = ScreenGui.OthersF
 ScreenGui.ScrollFrame.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
 ScreenGui.ScrollFrame.ClipsDescendants = true
-ScreenGui.ScrollFrame.Position = UDim2.new(0.112, 0,0.412, 0)
+ScreenGui.ScrollFrame.Position = UDim2.new(0.112, 0,0.483, 0)
 ScreenGui.ScrollFrame.Size = UDim2.new(0, 307, 0, 34)
 
 ScreenGui.UICorner_75.Parent = ScreenGui.ScrollFrame
@@ -2329,12 +2332,12 @@ ScreenGui.ScrollText.Name = "Text"
 ScreenGui.ScrollText.Parent = ScreenGui.ScrollFrame
 ScreenGui.ScrollText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ScreenGui.ScrollText.BackgroundTransparency = 1.000
-ScreenGui.ScrollText.Position = UDim2.new(0.0406263508, 0, 0.0781977028, 0)
+ScreenGui.ScrollText.Position = UDim2.new(0.034, 0,0.019, 0)
 ScreenGui.ScrollText.Size = UDim2.new(0, 132, 0, 31)
 ScreenGui.ScrollText.Font = Enum.Font.Merriweather
 ScreenGui.ScrollText.Text = "Scroll Status:"
-ScreenGui.ScrollText.TextColor3 = Color3.fromRGB(192, 192, 192)
-ScreenGui.ScrollText.TextSize = 19.000
+ScreenGui.ScrollText.TextColor3 = Color3.fromRGB(157, 157, 157)
+ScreenGui.ScrollText.TextSize = 18
 ScreenGui.ScrollText.TextWrapped = true
 
 ScreenGui.ScrollTP.Name = "ScrollTP"
@@ -2383,21 +2386,12 @@ ScreenGui.MaxLevel.TextColor3 = Color3.fromRGB(157, 157, 157)
 ScreenGui.MaxLevel.TextSize = 19.000
 ScreenGui.MaxLevel.TextWrapped = true
 ScreenGui.MaxLevel.MouseButton1Click:Connect(function()
-	local players = game:GetService("Players")
-	local player = players.LocalPlayer;
-	local character = player.Character;
-	local humanoid = character.Humanoid
-	local level;
-	local wrkSpace = game:GetService("Workspace")
-	local whiteLotusNPC = wrkSpace.QuestNPCs.WhiteLotusNPC1
-	local redLotusNPC = wrkSpace.QuestNPCs.RedLotusNPC1
-	local head = character.Head
-	local TS = game:GetService("TeleportService")
-	local level;
-	local repStorage = game:GetService("ReplicatedStorage")
-	local gameEvent = repStorage.NetworkFolder.GameFunction
-
-	local FunnyPart = Instance.new("Part",wrkSpace)
+	local player = game:GetService("Players").LocalPlayer
+	local character = player.Character
+	local whiteLotusNPC = game:GetService("Workspace").QuestNPCs.WhiteLotusNPC1
+	local level = true;
+	local gameEvent = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
+	local FunnyPart = Instance.new("Part",game:GetService("Workspace"))
 
 	FunnyPart.Size = Vector3.new(.5,.5,.5)
 	FunnyPart.CFrame = CFrame.new(897, 242, -3069)
@@ -2406,24 +2400,16 @@ ScreenGui.MaxLevel.MouseButton1Click:Connect(function()
 	FunnyPart.CanCollide = false
 	FunnyPart.Shape = Enum.PartType.Ball
 	FunnyPart.Name = "FunnyPart"
-	FunnyPart.Transparency = 1
+	FunnyPart.Transparency = 1;
 
-	level = true;
-
-	task.spawn(function()
-		while level do 
-			local A1 = "ProcessKey"
-			local A2 = 
-				{
-					["Key"] = "E"
-				}
-			gameEvent:InvokeServer(A1,A2)
-
-			task.wait(1)
-		end
-	end)
-
+	function abandonQuest()
+		local abandon = {
+			[1] = "Abandon"
+		}
+		gameEvent:InvokeServer(unpack(abandon))
+	end
 	character.BattlerHealth:Destroy()
+
 	local function maxLevel()
 		for i = 0,20 do -- Red Lotus Quest
 			task.spawn(function()
@@ -2443,16 +2429,9 @@ ScreenGui.MaxLevel.MouseButton1Click:Connect(function()
 					["Step"] = i
 				}
 			}
-			local distance = player:DistanceFromCharacter(FunnyPart.Position)
-			if distance > 20 or humanoid.Health <= 0 then
-				break; 
-			end 
 			gameEvent:InvokeServer(unpack(args))
 			if i == 20 then
-				local abandon = {
-					[1] = "Abandon"
-				}
-				gameEvent:InvokeServer(unpack(abandon))
+				abandonQuest()
 			end
 		end
 		task.wait(2.25)
@@ -2473,17 +2452,10 @@ ScreenGui.MaxLevel.MouseButton1Click:Connect(function()
 					["QuestName"] = "WhiteLotus1",
 					["Step"] = i
 				}
-			}
-			local distance = player:DistanceFromCharacter(whiteLotusNPC.PrimaryPart.Position)
-			if distance > 20 or humanoid.Health <= 0 then
-				break; 
-			end 
+			} 
 			gameEvent:InvokeServer(unpack(args))
 			if i == 10 then
-				local abandon = {
-					[1] = "Abandon"
-				}
-				gameEvent:InvokeServer(unpack(abandon))
+				abandonQuest()
 			end
 		end
 		task.wait(2.25)
@@ -2498,14 +2470,14 @@ ScreenGui.MaxLevel.MouseButton1Click:Connect(function()
 			}
 			gameEvent:InvokeServer(unpack(entering))
 			task.wait(1)
-			TS:Teleport(game.PlaceId, player)
+			game:GetService("TeleportService"):Teleport(game.PlaceId, player)
 		end
 	end
 
-	while level do
-		task.wait()
-		maxLevel()
-	end
+		while (level) do
+			task.wait()
+			maxLevel()
+		end
 end)
 ScreenGui.UICorner_79.Parent = ScreenGui.MaxLevel
 
@@ -3265,7 +3237,7 @@ ScreenGui.JumpRound.Parent =ScreenGui.JumpTB
 ScreenGui.ElementBtn.Name = "ElementBtn"
 ScreenGui.ElementBtn.Parent = ScreenGui.OthersF
 ScreenGui.ElementBtn.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-ScreenGui.ElementBtn.Position = UDim2.new(0.535, 0,0.66, 0)
+ScreenGui.ElementBtn.Position = UDim2.new(0.535, 0,0.691, 0)
 ScreenGui.ElementBtn.Size = UDim2.new(0, 171, 0, 34)
 ScreenGui.ElementBtn.Font = Enum.Font.Merriweather
 ScreenGui.ElementBtn.Text = "Element Change"
@@ -3278,7 +3250,7 @@ ScreenGui.Roundify.Parent = ScreenGui.ElementBtn
 ScreenGui.ShopBtn.Name = "ShopBtn"
 ScreenGui.ShopBtn.Parent = ScreenGui.OthersF
 ScreenGui.ShopBtn.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-ScreenGui.ShopBtn.Position = UDim2.new(0.042, 0,0.66, 0)
+ScreenGui.ShopBtn.Position = UDim2.new(0.042, 0,0.691, 0)
 ScreenGui.ShopBtn.Size = UDim2.new(0, 171, 0, 34)
 ScreenGui.ShopBtn.Font = Enum.Font.Merriweather
 ScreenGui.ShopBtn.Text = "Open Shop"
@@ -3288,11 +3260,32 @@ ScreenGui.ShopBtn.TextWrapped = true
 
 ScreenGui.Roundify2.Parent = ScreenGui.ShopBtn
 
+ScreenGui.HighTextLine.Name = "HighTextLine"
+ScreenGui.HighTextLine.Parent = ScreenGui.OthersF
+ScreenGui.HighTextLine.BackgroundColor3 = Color3.fromRGB(145, 145, 145)
+ScreenGui.HighTextLine.BorderColor3 = Color3.fromRGB(145, 145, 145)
+ScreenGui.HighTextLine.Position = UDim2.new(0.0267396197, 0, 0.294720292, 0)
+ScreenGui.HighTextLine.Size = UDim2.new(0, 374, 0, 0)
+
+ScreenGui.VehicleBoost.Name = "VehicleBoost"
+ScreenGui.VehicleBoost.Parent = ScreenGui.OthersF
+ScreenGui.VehicleBoost.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+ScreenGui.VehicleBoost.Position = UDim2.new(0.534825861, 0, 0.339506179, 0)
+ScreenGui.VehicleBoost.Size = UDim2.new(0, 171, 0, 34)
+ScreenGui.VehicleBoost.Font = Enum.Font.Merriweather
+ScreenGui.VehicleBoost.Text = "Vehicle Boost"
+ScreenGui.VehicleBoost.TextColor3 = Color3.fromRGB(157, 157, 157)
+ScreenGui.VehicleBoost.TextSize = 19.000
+ScreenGui.VehicleBoost.TextWrapped = true
+
+ScreenGui.VehicleBoostRound.Name = "VehicleBoostRound"
+ScreenGui.VehicleBoostRound.Parent = ScreenGui.VehicleBoost
+
 ScreenGui.QuitLotus.Name = "QuitLotus"
 ScreenGui.QuitLotus.Parent = ScreenGui.OthersF
 ScreenGui.QuitLotus.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-ScreenGui.QuitLotus.Position = UDim2.new(0.186567158, 0, 0.280864209, 0)
-ScreenGui.QuitLotus.Size = UDim2.new(0, 255, 0, 34)
+ScreenGui.QuitLotus.Position = UDim2.new(0.042, 0,0.34, 0)
+ScreenGui.QuitLotus.Size = UDim2.new(0, 171,0, 34)
 ScreenGui.QuitLotus.Font = Enum.Font.Merriweather
 ScreenGui.QuitLotus.Text = "Quit Lotus"
 ScreenGui.QuitLotus.TextColor3 = Color3.fromRGB(157, 157, 157)
@@ -3305,7 +3298,7 @@ ScreenGui.QuitLotusRound.Parent = ScreenGui.QuitLotus
 ScreenGui.CombatBtn.Name = "CombatBtn"
 ScreenGui.CombatBtn.Parent = ScreenGui.OthersF
 ScreenGui.CombatBtn.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-ScreenGui.CombatBtn.Position = UDim2.new(0.111940302, 0, 0.796296239, 0)
+ScreenGui.CombatBtn.Position = UDim2.new(0.117, 0,0.836, 0)
 ScreenGui.CombatBtn.Size = UDim2.new(0, 307, 0, 34)
 ScreenGui.CombatBtn.Font = Enum.Font.Merriweather
 ScreenGui.CombatBtn.Text = "Open Combat & ESP"
@@ -7295,6 +7288,23 @@ local function CWUFV_fake_script() -- ScreenGui.ShopBtn.ShopScript
 end
 coroutine.wrap(CWUFV_fake_script)()
 
+local function HZXC_fake_script() -- VehicleBoost.VehicleSpeed 
+	local script = Instance.new('LocalScript', ScreenGui.VehicleBoost)
+
+	local OldIndex = nil;
+	script.Parent.MouseButton1Click:Connect(function()
+		OldIndex = hookmetamethod(game,"__index", function(self,args)
+			if (tostring(self) == "MaxSpeed") then
+				if (tostring(args) == "Value") then
+					return 10000
+				end
+			end
+			return OldIndex(self,args)
+		end)
+	end)
+end
+coroutine.wrap(HZXC_fake_script)()
+
 
 local function BOCXGP_fake_script() -- AimBtn.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui.AimBtn)
@@ -7609,8 +7619,10 @@ local function EBUB_fake_script() -- LineESPBtn.LocalScript
 							if onScreen and toggled then
 								line.To = Vector2.new(vector.X,vector.Y)
 								line.Visible = true
+                                line.Transparency = 1
 							else
 								line.Visible = false
+                                line.Transparency = 0;
 							end
 						end
 					end)
@@ -7639,8 +7651,10 @@ local function EBUB_fake_script() -- LineESPBtn.LocalScript
 								if onScreen and toggled then
 									line.To = Vector2.new(vector.X,vector.Y)
 									line.Visible = true
+                                    line.Transparency = 1
 								else
 									line.Visible = false
+                                    line.Transparency = 0;
 								end
 							end
 						end)
@@ -7668,8 +7682,10 @@ local function EBUB_fake_script() -- LineESPBtn.LocalScript
 								if onScreen and toggled then
 									line.To = Vector2.new(vector.X,vector.Y)
 									line.Visible = true
+                                    line.Transparency = 1;
 								else
 									line.Visible = false
+                                    line.Transparency = 0;
 								end
 							end
 						end)
@@ -10585,16 +10601,15 @@ local function AYNPDTP_fake_script() -- ScreenGui.CircleButton.LocalScript
 	local players = game:GetService("Players")
 	local player = players.LocalPlayer;
 	local character = player.Character;
-	local humanoid = character.Humanoid
-	local level;
-	local wrkSpace = game:GetService("Workspace")
-	local whiteLotusNPC = wrkSpace.QuestNPCs.WhiteLotusNPC1
-	local redLotusNPC = wrkSpace.QuestNPCs.RedLotusNPC1
-
-	local repStorage = game:GetService("ReplicatedStorage")
-	local gameEvent = repStorage.NetworkFolder.GameFunction
-	local WeirdPart = Instance.new("Part",wrkSpace)
-
+	local whiteLotusNPC = game:GetService("Workspace").QuestNPCs.WhiteLotusNPC1
+	local gameEvent = game:GetService("ReplicatedStorage").NetworkFolder.GameFunction
+	local WeirdPart = Instance.new("Part",game:GetService("Workspace"))
+	function abandonQuest()
+		local abandon = {
+			[1] = "Abandon"
+		}
+		gameEvent:InvokeServer(unpack(abandon))
+	end
 	WeirdPart.Size = Vector3.new(.5,.5,.5)
 	WeirdPart.CFrame = CFrame.new(897, 236, -3072)
 	WeirdPart.BrickColor = BrickColor.new("Transparent")
@@ -10603,7 +10618,7 @@ local function AYNPDTP_fake_script() -- ScreenGui.CircleButton.LocalScript
 	WeirdPart.Shape = Enum.PartType.Ball
 	WeirdPart.Name = "WeirdPart"
 	WeirdPart.Transparency = 1
-
+	
 	local function maxLevel()
 		for i = 0,20 do -- Red Lotus Quest
 			task.spawn(function()
@@ -10623,16 +10638,9 @@ local function AYNPDTP_fake_script() -- ScreenGui.CircleButton.LocalScript
 					["Step"] = i
 				}
 			}
-			local distance = player:DistanceFromCharacter(WeirdPart.Position)
-			if distance > 20 or humanoid.Health <= 0 or character.BattlerHealth.Value <= 0 then
-				break; 
-			end 
 			gameEvent:InvokeServer(unpack(args))
 			if i == 20 then
-				local abandon = {
-					[1] = "Abandon"
-				}
-				gameEvent:InvokeServer(unpack(abandon))
+				abandonQuest()
 			end
 		end
 		task.wait(2.25)
@@ -10654,21 +10662,14 @@ local function AYNPDTP_fake_script() -- ScreenGui.CircleButton.LocalScript
 					["Step"] = i
 				}
 			}
-			local distance = player:DistanceFromCharacter(whiteLotusNPC.PrimaryPart.Position)
-			if distance > 20 or humanoid.Health <= 0 or character.BattlerHealth.Value <= 0 then
-				break; 
-			end 
 			gameEvent:InvokeServer(unpack(args))
 			if i == 10 then
-				local abandon = {
-					[1] = "Abandon"
-				}
-				gameEvent:InvokeServer(unpack(abandon))
+				abandonQuest()
 			end
 		end
 		task.wait(2.25)
 	end
-
+	
 	script.Parent.MouseButton1Click:Connect(function()
 		if toggled then -- Meaning its already on
 			Off.Visible = true
@@ -10679,7 +10680,7 @@ local function AYNPDTP_fake_script() -- ScreenGui.CircleButton.LocalScript
 			wait(0.25)
 			debounce = false
 			toggled = false
-
+	
 		elseif toggled == false then -- Meaning its already off
 			On.Visible = true
 			Off.Visible = false
